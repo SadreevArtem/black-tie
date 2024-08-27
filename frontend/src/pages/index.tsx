@@ -23,7 +23,7 @@ export default function Home() {
         <Author
           images={[
             { url: "/images/banner1.png" },
-            { url: "/images/banner1.png" },
+            { url: "/images/banner2.png" },
           ]}
         />
         {/* <div className="md:mt-[60px] mt-4">

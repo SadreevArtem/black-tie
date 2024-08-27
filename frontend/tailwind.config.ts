@@ -19,7 +19,9 @@ const config: Config = {
         lg: "1280px",
         xl: "1440px",
       },
-      
+      colors: {
+        primary: "#DABB74"
+      }
     },
   },
   plugins: [],

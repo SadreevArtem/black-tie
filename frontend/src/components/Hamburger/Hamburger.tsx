@@ -28,13 +28,13 @@ export const Hamburger: React.FC<Props> = ({
       <button onClick={onToggle} className="flex">
         <div className={clsx("flex flex-col gap-1 ", {hidden: active})}>
           <div
-            className={clsx("bg-[#9d8c98] w-[22px] h-[2px]")}
+            className={clsx("bg-primary w-[22px] h-[2px]")}
           />
            <div
-            className={clsx("bg-[#9d8c98] w-[22px] h-[2px]")}
+            className={clsx("bg-primary w-[22px] h-[2px]")}
           />
            <div
-            className={clsx("bg-[#9d8c98] w-[22px] h-[2px]")}
+            className={clsx("bg-primary w-[22px] h-[2px]")}
           />
         </div>
         <AppIcon
