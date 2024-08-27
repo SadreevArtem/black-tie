@@ -12,6 +12,7 @@ export const Author: FC<BannerProps> = ({ images }) => {
   const [activeBannerIndex, setActiveBannerIndex] = useState(0);
   const activeBanner = images[activeBannerIndex];
   const imageRef = useRef<HTMLImageElement>(null);
+  const divRef = useRef<HTMLDivElement>(null);
 
   const onNextBannerIndex = useCallback(() => {
     setActiveBannerIndex((prevState: number) => (prevState === images.length - 1 ? 0 : prevState + 1));
@@ -50,23 +51,36 @@ export const Author: FC<BannerProps> = ({ images }) => {
               />
             </CSSTransition>
           </SwitchTransition>
-          {activeBannerIndex === 1 && (
-            <div className={`text-primary absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col md:text-[28px] text-[22px] text-center transition-opacity duration-1000 ease-in-out ${
-              activeBannerIndex === 1 ? "opacity-100" : "opacity-0"
-            }`}>
+          <SwitchTransition mode="out-in">
+            <CSSTransition
+              nodeRef={divRef}
+              key={activeBannerIndex}
+              timeout={1000}
+              className="transition-opacity duration-1000 md:object-bottom object-cover"
+              classNames={{
+                enter: "opacity-0",
+                enterActive: "opacity-100",
+                exit: "opacity-100",
+                exitActive: "opacity-0",
+              }}
+            >
+              <div ref={divRef}>
+                {activeBannerIndex === 1 && (
+            <div className={`text-primary absolute top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col md:text-[28px] text-[22px] text-center`}>
               <p className="font-extrabold">GOLD КАРТА</p>
               <p>10% скидка всем подписчикам Telegram канала</p>
               <p className="mt-8">Бесплатные напитки из нашего бара</p>
             </div>
           )}
           {activeBannerIndex === 0 && (
-            <div  className={`text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col md:text-[28px] text-[22px] text-center items-center transition-opacity duration-1000 ease-in-out ${
-              activeBannerIndex === 0 ? "opacity-100" : "opacity-0"
-            }`}>
-              <Image src={"/images/Group.svg"} alt="logo" width={200} height={100}/>
+            <div  className={`text-white absolute top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col md:text-[28px] text-[22px] text-center items-center`}>
+              <Image src={"/images/Group.svg"} alt="logo" width={200} height={100}   quality={100}/>
               <p className="mt-12">САЛОН ЭРОТИЧЕСКОГО МАССАЖА</p>
             </div>
           )}
+              </div>
+            </CSSTransition>
+          </SwitchTransition>
         </div>
       </div>
     </div>
