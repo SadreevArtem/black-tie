@@ -1,0 +1,15 @@
+export type IconType =
+  | "social-vk"
+  | "social-tg"
+  | "star-filled"
+  | "close"
+  | "chevron-right"
+  | "phone"
+  | "search"
+  | "cart"
+  | "password-hide"
+  | "password-show"
+  | "favorite"
+  | "check"
+  | "block"
+  | "favorite-outlined";

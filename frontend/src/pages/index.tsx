@@ -1,14 +1,41 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
+import { Inter, Montserrat } from "next/font/google";
+import { AppHead } from "@/components/AppHead/AppHead";
+import { Header } from "@/components/Header/Header";
+import { Author } from "@/components/Author/Author";
 
-const inter = Inter({ subsets: ["latin"] });
+
+export const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['400', '700'], // Настраиваешь веса, которые тебе нужны
+});
+
+export const MetaData = {
+  title: "",
+  description: ""
+};
 
 export default function Home() {
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      hello chocolate
-    </main>
+    <>
+      <AppHead title={MetaData.title} description={MetaData.description} />
+      <Header />
+      <div className={`flex flex-col justify-between ${montserrat.className}`}>
+        <Author
+          images={[
+            { url: "/images/banner1.png" },
+            { url: "/images/banner1.png" },
+          ]}
+        />
+        {/* <div className="md:mt-[60px] mt-4">
+          <Categories />
+        </div> */}
+        {/* <div className="md:mt-[60px] mt-4">
+          <Selections title="Вам точно понравится"/>
+        </div> */}
+        {/* <div id="contacts" className="md:mt-[60px] mt-4">
+          <ReviewsBlock items={reviews} />
+        </div> */}
+      </div>
+    </>
   );
 }
