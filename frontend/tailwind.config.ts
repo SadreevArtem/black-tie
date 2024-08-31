@@ -20,7 +20,8 @@ const config: Config = {
         xl: "1440px",
       },
       colors: {
-        primary: "#DABB74"
+        primary: "#DABB74",
+        "bg-opacity": 'rgba(2, 2, 2, 0.5)'
       }
     },
   },

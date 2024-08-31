@@ -1,6 +1,9 @@
 import Image from "next/image";
 import { FC, useCallback, useEffect, useRef, useState } from "react";
 import { SwitchTransition, CSSTransition } from "react-transition-group";
+import { AppModal } from "../AppModal";
+import { useModal } from "@/hooks/useModal";
+import { SignUpForm } from "../SignUpForm/SignUpForm";
 
 
 type BannerProps = {
@@ -8,6 +11,7 @@ type BannerProps = {
 };
 
 export const Author: FC<BannerProps> = ({ images }) => {
+  const { open, handleOpen, handleClose } = useModal();
 
   const [activeBannerIndex, setActiveBannerIndex] = useState(0);
   const activeBanner = images[activeBannerIndex];
@@ -66,23 +70,37 @@ export const Author: FC<BannerProps> = ({ images }) => {
             >
               <div ref={divRef}>
                 {activeBannerIndex === 1 && (
-            <div className={`text-primary absolute top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col md:text-[28px] text-[22px] text-center`}>
-              <p className="font-extrabold">GOLD КАРТА</p>
-              <p>10% скидка всем подписчикам Telegram канала</p>
-              <p className="mt-8">Бесплатные напитки из нашего бара</p>
-            </div>
-          )}
-          {activeBannerIndex === 0 && (
-            <div  className={`text-white absolute top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col md:text-[28px] text-[22px] text-center items-center`}>
-              <Image src={"/images/Group.svg"} alt="logo" width={200} height={100}   quality={100}/>
-              <p className="mt-12">САЛОН ЭРОТИЧЕСКОГО МАССАЖА</p>
-            </div>
-          )}
+                  <div
+                    className={`text-primary absolute top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col md:text-[28px] text-[22px] text-center`}
+                  >
+                    <p className="font-extrabold">GOLD КАРТА</p>
+                    <p>10% скидка всем подписчикам Telegram канала</p>
+                    <p className="mt-8">Бесплатные напитки из нашего бара</p>
+                    <button className="mt-12 text-white bg-bg-opacity p-2 px-8 max-md:text-[14px] rounded-[80px] hover:bg-black transition hover:text-primary" onClick={handleOpen}>ЗАПИСАТЬСЯ ОНЛАЙН</button>
+                  </div>
+                )}
+                {activeBannerIndex === 0 && (
+                  <div
+                    className={`text-white absolute top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col md:text-[28px] text-[22px] text-center items-center`}
+                  >
+                    <Image
+                      src={"/images/Group.svg"}
+                      alt="logo"
+                      width={200}
+                      height={100}
+                      quality={100}
+                    />
+                    <button className="mt-12 bg-bg-opacity p-2 px-8 max-md:text-[14px] rounded-[80px] hover:bg-black transition hover:text-primary" onClick={handleOpen}>ЗАПИСАТЬСЯ ОНЛАЙН</button>
+                  </div>
+                )}
               </div>
             </CSSTransition>
           </SwitchTransition>
         </div>
       </div>
+      <AppModal isOpen={open} closeHandler={handleClose}>
+        <SignUpForm />
+      </AppModal>
     </div>
   );
 };
