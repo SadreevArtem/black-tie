@@ -1,23 +1,38 @@
-import React from 'react'
-import { Controller, useForm } from 'react-hook-form';
+import React, { FC } from 'react'
+import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import { AppTextField } from '../AppTextField';
 import { getErrorMessage } from '@/shared/static/lib/getError';
 import { AppPhoneInputMasked } from '../AppPhoneInputMasked';
 import { getMaskedPhoneValidation } from '@/shared/static/lib';
 import { montserrat } from '@/pages';
+import { useMutation } from '@tanstack/react-query';
+import { api } from '@/pages/api/api';
+import { appToast } from '../AppToast/components/lib/appToast';
+import { OrderInput } from '@/shared/static/types';
 
-type Input ={
-    phone: string;
-    name: string;
+type Props = {
+  handleClose: ()=> void;
 }
 
-export const SignUpForm = () => {
+export const SignUpForm:FC<Props> = ({ handleClose }) => {
     const {
         handleSubmit,
         control,
         formState: { errors },
-      } = useForm<Input>();
-      const onSubmit = ()=>{console.log('onSubmit')}
+      } = useForm<OrderInput>();
+      const mutation = useMutation({
+        mutationFn: api.createOrder,
+        onSuccess: () => {
+          appToast.success("Запрос успешно отправлен!");
+          handleClose();
+        },
+        onError: ()=>{
+          appToast.error("Произошла ошибка");
+        },
+      });
+      const onSubmit:SubmitHandler<OrderInput> = (data)=>{
+        mutation.mutate(data);
+      }
       const getError = getErrorMessage(errors);
   return (
     <form

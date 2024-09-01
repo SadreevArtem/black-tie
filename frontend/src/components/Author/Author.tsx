@@ -106,7 +106,7 @@ export const Author: FC<BannerProps> = ({ images }) => {
         </div>
       </div>
       <AppModal isOpen={open} closeHandler={handleClose}>
-        <SignUpForm />
+        <SignUpForm handleClose={handleClose}/>
       </AppModal>
     </div>
   );

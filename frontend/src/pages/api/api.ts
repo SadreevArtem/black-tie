@@ -1,3 +1,5 @@
+import { OrderInput } from "@/shared/static/types";
+
 class API {
   baseUrl: string;
   constructor(baseUrl: string) {
@@ -55,26 +57,26 @@ class API {
   //     },
   //   });
   // };
-  // getOrders = (token: string) => {
-  //   return fetch(`${this.baseUrl}/orders`, {
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       Authorization: `Bearer ${token}`,
-  //     },
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       return data;
-  //     });
-  // };
-  // createOrder = (input: Order) =>
-  //   fetch(`${this.baseUrl}/orders`, {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(input),
-  //   });
+  getOrders = (token: string) => {
+    return fetch(`${this.baseUrl}/orders`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        return data;
+      });
+  };
+  createOrder = (input: OrderInput) =>
+    fetch(`${this.baseUrl}/orders`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(input),
+    });
     // uploadImage = (input: File) => {
     //   const formData = new FormData();
     //   formData.append('file', input); // 'file' — имя поля, ожидаемое сервером

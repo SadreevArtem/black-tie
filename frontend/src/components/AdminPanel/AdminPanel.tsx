@@ -5,6 +5,7 @@ import { useState } from "react";
 
 import { useAuthStore } from "@/store/auth";
 import { Button } from "../Button";
+import { Orders } from "../Orders/Orders";
 
 type Props = {
   title: string;
@@ -12,9 +13,21 @@ type Props = {
 };
 
 export const AdminPanel: React.FC<Props> = ({title, className=""})=> {
-    const [currentMenu, setCurrentMenu] = useState("products");
+    const [currentMenu, setCurrentMenu] = useState("masters");
     const handleMenuClick = (menu: string) => setCurrentMenu(menu);
     const unAuth = useAuthStore((state) => state.unAuth);
+    const renderContent = () => {
+      switch (currentMenu) {
+        case "masters":
+          return <div>masters</div>;
+        case "orders": 
+          return <Orders />;
+        case "programs": 
+          return <div>programs</div>;
+        default:
+          return null; // Возвращает null, если нет совпадений
+      }
+    };
     return (
       <>
       <div className="container pt-8">
@@ -29,7 +42,7 @@ export const AdminPanel: React.FC<Props> = ({title, className=""})=> {
             <ul className="flex flex-col gap-4">
               {menuAdmin.map((item) => (
                 <li className="text-[24px]" key={item.id}>
-                  <button onClick={() => handleMenuClick(item.name)}>
+                  <button className={clsx({"bg-white px-4 rounded-[50px]": item.name===currentMenu})} onClick={() => handleMenuClick(item.name)}>
                     {item.value}
                   </button>
                 </li>
@@ -37,7 +50,9 @@ export const AdminPanel: React.FC<Props> = ({title, className=""})=> {
             </ul>
           </div>
           <div className="w-full">
-            {/* {currentMenu === "products" ? <Products />: <Orders />} */}
+            {
+              renderContent()
+            }
           </div>
         </div>
       </div>

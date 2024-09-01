@@ -1,7 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 import { ToastContentProps } from "react-toastify";
-import { AppIcon } from "@/shared/components/AppIcon";
+import { AppIcon } from "@/components/AppIcon";
 
 type Props = {
   type: "success" | "error";
