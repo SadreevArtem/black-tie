@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import clsx from "clsx";
 import { AppIcon } from "../../AppIcon";
-import { Master } from "../ReviewsBlock";
+import { Master } from "../MastersBlock";
 
 
 

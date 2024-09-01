@@ -1,3 +1,4 @@
+import { Master } from "@/components/MastersBlock/MastersBlock";
 import { OrderInput } from "@/shared/static/types";
 
 class API {
@@ -13,50 +14,76 @@ class API {
       },
       body: JSON.stringify(input),
     });
-  // getProducts = (category: CategoryName) => {
-  //   return fetch(`${this.baseUrl}/products/category/${category}`)
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       return data;
-  //     });
-  // };
-  // getProductById = (id: number) => {
-  //   return fetch(`${this.baseUrl}/products/${id}`)
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       return data;
-  //     });
-  // };
+  getMasters = () => {
+    return fetch(`${this.baseUrl}/masters`)
+      .then((res) => res.json())
+      .then((data) => {
+        return data;
+      });
+  };
+  getMastersAll = (token:string) => {
+    return fetch(`${this.baseUrl}/masters/all`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        return data;
+      });
+  };
+  getMastersById = (id: number) => {
+    return fetch(`${this.baseUrl}/masters/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        return data;
+      });
+  };
+  getMastersByIdAdmin = (id: number, token:string) => {
+    return fetch(`${this.baseUrl}/masters/all/${id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        return data;
+      });
+  };
 
-  // createProduct = (input: Product, token: string) => {
-  //   return fetch(`${this.baseUrl}/products`, {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       Authorization: `Bearer ${token}`,
-  //     },
-  //     body: JSON.stringify(input),
-  //   });
-  // };
-  // updateProduct = (input: Product, token: string) => {
-  //   return fetch(`${this.baseUrl}/products/${input.id}`, {
-  //     method: "PUT",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       Authorization: `Bearer ${token}`,
-  //     },
-  //     body: JSON.stringify(input),
-  //   });
-  // };
-  // deleteProduct = (id: number, token: string) => {
-  //   return fetch(`${this.baseUrl}/products/${id}`, {
-  //     method: "DELETE",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       Authorization: `Bearer ${token}`,
-  //     },
-  //   });
-  // };
+  createMaster = (input: Master, token: string) => {
+    return fetch(`${this.baseUrl}/masters`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(input),
+    });
+  };
+  updateMaster = (input: Master, token: string) => {
+    return fetch(`${this.baseUrl}/masters/${input.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(input),
+    });
+  };
+  deleteMaster = (id: number, token: string) => {
+    return fetch(`${this.baseUrl}/masters/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  };
   getOrders = (token: string) => {
     return fetch(`${this.baseUrl}/orders`, {
       headers: {

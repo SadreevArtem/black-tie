@@ -14,7 +14,9 @@ export type Master = {
   weight: number;
   size: number;
   avatar: string;
-  images: string[];
+  imageSecond: string;
+  imageThird: string;
+  createdAt: string;
 };
 
 type Props = {
@@ -24,7 +26,7 @@ type Props = {
   rating?: boolean;
 };
 
-export const ReviewsBlock: React.FC<Props> = ({
+export const MastersBlock: React.FC<Props> = ({
   items,
   title = "МАСТЕРА",
   rating = false,

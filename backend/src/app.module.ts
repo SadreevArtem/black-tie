@@ -15,6 +15,7 @@ import { TelegrammModule } from './telegramm/telegramm.module';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { OrdersModule } from './orders/orders.module';
+import { MastersModule } from './masters/masters.module';
 
 @Module({
   imports: [
@@ -53,6 +54,7 @@ import { OrdersModule } from './orders/orders.module';
     UsersModule,
     AuthModule,
     OrdersModule,
+    MastersModule,
   ],
   controllers: [AppController],
   providers: [

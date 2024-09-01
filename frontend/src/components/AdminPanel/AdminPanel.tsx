@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useAuthStore } from "@/store/auth";
 import { Button } from "../Button";
 import { Orders } from "../Orders/Orders";
+import { Masters } from "../Masters/Masters";
 
 type Props = {
   title: string;
@@ -19,7 +20,7 @@ export const AdminPanel: React.FC<Props> = ({title, className=""})=> {
     const renderContent = () => {
       switch (currentMenu) {
         case "masters":
-          return <div>masters</div>;
+          return <Masters/>;
         case "orders": 
           return <Orders />;
         case "programs": 

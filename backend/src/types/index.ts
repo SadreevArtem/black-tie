@@ -7,7 +7,8 @@ export type Master = {
   weight: number;
   size: number;
   avatar: string;
-  images: string[];
+  imageSecond: string;
+  imageThird: string;
 };
 
 export type order = {
