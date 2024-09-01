@@ -24,7 +24,7 @@ export const SignUpForm = () => {
       onSubmit={handleSubmit(onSubmit)}
       className={`"py-4 flex flex-col md:gap-4 gap-3 " ${montserrat.className}`}
     >
-      <h4 className="text-white text-xl font-semibold uppercase">
+      <h4 className="text-white md:text-2xl text-xl font-semibold uppercase">
         Обратная связь
       </h4>
       <span className='text-black text-xl'>Номер телефона</span>
@@ -72,7 +72,7 @@ export const SignUpForm = () => {
         value="Записаться онлайн"
         className="bg-bg-opacity font-bold my-6 p-2 px-12 uppercase md:text-[24px] text-[18px] rounded-[80px] hover:bg-black transition text-white hover:text-primary self-center cursor-pointer"
       />
-      <span className='text-center text-white'>Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь с Политикой конфиденциальности</span>
+      <span className='text-center text-white'>Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь с <span className='text-black'>Политикой конфиденциальности</span></span> 
     </form>
   );
 }

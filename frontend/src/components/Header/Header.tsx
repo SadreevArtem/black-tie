@@ -4,10 +4,15 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
 import { HEADER_MENU } from "../Hamburger/static";
 import { Hamburger } from "../Hamburger";
 import Image from "next/image";
+import { Is18Modal } from "../Is18Modal/Is18Modal";
+import { Is18Form } from "../Is18Form/Is18Form";
+import { useAgeCheckStore } from "@/store/is18";
 
 
 export const Header: React.FC = () => {
   const [hamburgerActive, setHamburgerActive] = useState(false);
+  const is18 = useAgeCheckStore((state) => state.isAgeVerified);
+
   const onOpen = () => {
     setHamburgerActive(true);
     document.body.style.overflow = "hidden";
@@ -81,6 +86,9 @@ export const Header: React.FC = () => {
           </ul>
         </nav>
       </div>
+      <Is18Modal isOpen={!is18}>
+        <Is18Form/>
+      </Is18Modal>
     </header>
   );
 };

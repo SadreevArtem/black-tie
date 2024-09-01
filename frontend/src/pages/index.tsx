@@ -1,4 +1,4 @@
-import { Inter, Montserrat } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import { AppHead } from "@/components/AppHead/AppHead";
 import { Header } from "@/components/Header/Header";
 import { Author } from "@/components/Author/Author";
@@ -6,6 +6,9 @@ import { InfoBlock } from "@/components/InfoBlock/InfoBlock";
 import { ReviewsBlock } from "@/components/ReviewsBlock/ReviewsBlock";
 import { reviews } from "@/shared/static";
 import { AboutBlock } from "@/components/AboutBlock/AboutBlock";
+import { ReactElement } from "react";
+import { BaseLayout } from "../../layouts/BaseLayout/BaseLayout";
+
 
 
 export const montserrat = Montserrat({
@@ -18,7 +21,7 @@ export const MetaData = {
   description: ""
 };
 
-export default function Home() {
+const Home = ()=> {
   return (
     <>
       <AppHead title={MetaData.title} description={MetaData.description} />
@@ -49,3 +52,13 @@ export default function Home() {
     </>
   );
 }
+
+Home.getLayout = function getLayout(page: ReactElement) {
+  return (
+    <BaseLayout>
+      {page}
+    </BaseLayout>
+  )
+}
+
+export default Home;

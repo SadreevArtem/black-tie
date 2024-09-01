@@ -71,17 +71,17 @@ export const Author: FC<BannerProps> = ({ images }) => {
               <div ref={divRef}>
                 {activeBannerIndex === 1 && (
                   <div
-                    className={`text-primary absolute top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col md:text-[28px] text-[22px] text-center`}
+                    className={`text-primary absolute top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col md:text-[28px] text-[22px] text-center`}
                   >
                     <p className="font-extrabold">GOLD КАРТА</p>
                     <p>10% скидка всем подписчикам Telegram канала</p>
                     <p className="mt-8">Бесплатные напитки из нашего бара</p>
-                    <button className="mt-12 text-white bg-bg-opacity p-2 px-8 max-md:text-[14px] rounded-[80px] hover:bg-black transition hover:text-primary" onClick={handleOpen}>ЗАПИСАТЬСЯ ОНЛАЙН</button>
+                    {/* <button className="mt-12 text-white bg-bg-opacity p-2 px-8 max-md:text-[14px] rounded-[80px] hover:bg-black transition hover:text-primary" onClick={handleOpen}>ЗАПИСАТЬСЯ ОНЛАЙН</button> */}
                   </div>
                 )}
                 {activeBannerIndex === 0 && (
                   <div
-                    className={`text-white absolute top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col md:text-[28px] text-[22px] text-center items-center`}
+                    className={`text-white absolute top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col md:text-[28px] text-[22px] text-center items-center`}
                   >
                     <Image
                       src={"/images/Group.svg"}
@@ -90,12 +90,19 @@ export const Author: FC<BannerProps> = ({ images }) => {
                       height={100}
                       quality={100}
                     />
-                    <button className="mt-12 bg-bg-opacity p-2 px-8 max-md:text-[14px] rounded-[80px] hover:bg-black transition hover:text-primary" onClick={handleOpen}>ЗАПИСАТЬСЯ ОНЛАЙН</button>
                   </div>
                 )}
               </div>
             </CSSTransition>
           </SwitchTransition>
+          <div className="text-white absolute md:bottom-[54px] bottom-[24px] left-1/2 transform -translate-x-1/2 md:text-[28px] text-[22px]">
+            <button
+              className="mt-12 bg-bg-opacity p-2 md:px-16 px-12 max-md:text-[14px] rounded-[80px] hover:bg-black transition hover:text-primary"
+              onClick={handleOpen}
+            >
+              ЗАПИСАТЬСЯ ОНЛАЙН
+            </button>
+          </div>
         </div>
       </div>
       <AppModal isOpen={open} closeHandler={handleClose}>
