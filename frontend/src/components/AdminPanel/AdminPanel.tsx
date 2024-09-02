@@ -7,6 +7,7 @@ import { useAuthStore } from "@/store/auth";
 import { Button } from "../Button";
 import { Orders } from "../Orders/Orders";
 import { Masters } from "../Masters/Masters";
+import { Programs } from "../Programs/Programs";
 
 type Props = {
   title: string;
@@ -20,11 +21,11 @@ export const AdminPanel: React.FC<Props> = ({title, className=""})=> {
     const renderContent = () => {
       switch (currentMenu) {
         case "masters":
-          return <Masters/>;
-        case "orders": 
+          return <Masters />;
+        case "programs":
+          return <Programs />;
+        case "orders":
           return <Orders />;
-        case "programs": 
-          return <div>programs</div>;
         default:
           return null; // Возвращает null, если нет совпадений
       }

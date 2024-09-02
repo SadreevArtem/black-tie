@@ -9,3 +9,13 @@ export type OrderInput = {
     phone: string;
     createdAt: string;
   };
+
+  export type Programm = {
+    id: number;
+    name: string;
+    description: string;
+    image: string;
+    currentPrice: string;
+    published: boolean;
+    createdAt: string;
+  };

@@ -84,6 +84,75 @@ class API {
       },
     });
   };
+  getProgramsAll = (token:string) => {
+    return fetch(`${this.baseUrl}/programs/all`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        return data;
+      });
+  };
+  getPrograms = () => {
+    return fetch(`${this.baseUrl}/programs`)
+      .then((res) => res.json())
+      .then((data) => {
+        return data;
+      });
+  };
+  getProgramsById = (id: number) => {
+    return fetch(`${this.baseUrl}/programs/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        return data;
+      });
+  };
+  getProgramsByIdAdmin = (id: number, token:string) => {
+    return fetch(`${this.baseUrl}/programs/all/${id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        return data;
+      });
+  };
+  createProgramm = (input: Master, token: string) => {
+    return fetch(`${this.baseUrl}/programs`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(input),
+    });
+  };
+  updateProgramm = (input: Master, token: string) => {
+    return fetch(`${this.baseUrl}/programs/${input.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(input),
+    });
+  };
+  deleteProgramm = (id: number, token: string) => {
+    return fetch(`${this.baseUrl}/programs/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  };
   getOrders = (token: string) => {
     return fetch(`${this.baseUrl}/orders`, {
       headers: {

@@ -3,11 +3,11 @@ import { AppHead } from "@/components/AppHead/AppHead";
 import { Header } from "@/components/Header/Header";
 import { Author } from "@/components/Author/Author";
 import { InfoBlock } from "@/components/InfoBlock/InfoBlock";
-import { ReviewsBlock } from "@/components/ReviewsBlock/ReviewsBlock";
 import { reviews } from "@/shared/static";
 import { AboutBlock } from "@/components/AboutBlock/AboutBlock";
 import { ReactElement } from "react";
 import { BaseLayout } from "../../layouts/BaseLayout/BaseLayout";
+import { MastersBlock } from "@/components/MastersBlock/MastersBlock";
 
 
 
@@ -35,7 +35,7 @@ const Home = ()=> {
         />
 
         <InfoBlock />
-        <ReviewsBlock items={reviews} />
+        <MastersBlock items={reviews} />
         <div className="md:mt-[60px] mt-4 bg-black">
           <AboutBlock />
         </div>
