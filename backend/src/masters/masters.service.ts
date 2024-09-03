@@ -20,7 +20,7 @@ export class MastersService {
   findAll(): Promise<Master[]> {
     return this.masterRepository.find({
       where: { published: true },
-      order: { createdAt: 'DESC' },
+      order: { createdAt: 'ASC' },
     });
   }
   findById(id: number): Promise<Master | undefined> {

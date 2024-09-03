@@ -7,8 +7,7 @@ import { useRouter } from "next/router";
 export const inter = Poiret_One({weight: "400", subsets: ['cyrillic']});
 
 export default function MasterPage() {
-  const token = useAuthStore((state) => state.token);
-    const isAuth = !!token;
+  
     const router = useRouter();
     const id = router.query.id;
     if(!id) return null;

@@ -6,9 +6,9 @@ import { AppPhoneInputMasked } from '../AppPhoneInputMasked';
 import { getMaskedPhoneValidation } from '@/shared/static/lib';
 import { montserrat } from '@/pages';
 import { useMutation } from '@tanstack/react-query';
-import { api } from '@/pages/api/api';
 import { appToast } from '../AppToast/components/lib/appToast';
 import { OrderInput } from '@/shared/static/types';
+import { api } from '@/shared/api/api';
 
 type Props = {
   handleClose: ()=> void;

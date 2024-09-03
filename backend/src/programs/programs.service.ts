@@ -14,7 +14,7 @@ export class ProgramsService {
   findAll(): Promise<Programm[]> {
     return this.programmRepository.find({
       where: { published: true },
-      order: { createdAt: 'DESC' },
+      order: { createdAt: 'ASC' },
     });
   }
   findAllAdmin(): Promise<Programm[]> {

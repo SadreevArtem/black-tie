@@ -9,7 +9,7 @@ import {
   TableRow,
 } from "@mui/material";
 import { useAuthStore } from "@/store/auth";
-import { api } from "@/pages/api/api";
+import { api } from "@/shared/api/api";
 import { Order } from "@/shared/static/types";
 
 

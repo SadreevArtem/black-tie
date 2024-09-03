@@ -9,11 +9,11 @@ import {
   TableRow,
 } from "@mui/material";
 import { useAuthStore } from "@/store/auth";
-import { api } from "@/pages/api/api";
 import { Master } from "../MastersBlock/MastersBlock";
 
 import { Button } from "../Button";
 import Link from "next/link";
+import { api } from "@/shared/api/api";
 
 
 

@@ -3,8 +3,6 @@ import { AppToast } from "@/components/AppToast";
 import { Login } from "@/components/Login/Login";
 import { useAuthStore } from "@/store/auth";
 
-import { Poiret_One } from "next/font/google";
-
 
 export default function Admin() {
   const token = useAuthStore((state) => state.token);

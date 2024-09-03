@@ -9,7 +9,7 @@ import {
   TableRow,
 } from "@mui/material";
 import { useAuthStore } from "@/store/auth";
-import { api } from "@/pages/api/api";
+import { api } from "@/shared/api/api";
 
 import { Button } from "../Button";
 import Link from "next/link";
@@ -48,13 +48,12 @@ const token = useAuthStore((state) => state.token);
                 {programs?.map((row) => (
                   <TableRow key={row.id}>
                     <TableCell>
-                      <Link href={`/staff-route/control/Programs/${row.id}`} className="hover:text-blue-700">
+                      <Link href={`/staff-route/control/programs/${row.id}`} className="hover:text-blue-700">
                         {row.name}
                       </Link>
                     </TableCell>
-                    <TableCell>{row.name}</TableCell>
                     <TableCell>{row.currentPrice}</TableCell>
-                    <TableCell>{row.description}</TableCell>
+                    <TableCell>{row.description.slice(0, 20)}...</TableCell>
                     <TableCell>
                       {row.published ? "На сайте" : "Скрыто"}
                     </TableCell>

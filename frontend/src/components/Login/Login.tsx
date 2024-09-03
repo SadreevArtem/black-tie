@@ -5,7 +5,7 @@ import Link from "next/link";
 import { AppTextField } from "../AppTextField";
 import { useAuthStore } from "@/store/auth";
 import { PasswordTextField } from "../PasswordTextField/PasswordTextField";
-import { api } from "@/pages/api/api";
+import { api } from "@/shared/api/api";
 
 
 type Inputs = {

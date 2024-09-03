@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 import { appToast } from "../AppToast/components/lib/appToast";
 // import { ImageInput } from "../ImageInput/ImageInput";
 import { Master } from "../MastersBlock/MastersBlock";
-import { api } from "@/pages/api/api";
+import { api } from "@/shared/api/api";
 import { useAuthStore } from "@/store/auth";
 import { Button } from "../Button";
 

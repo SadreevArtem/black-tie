@@ -8,6 +8,7 @@ import { AboutBlock } from "@/components/AboutBlock/AboutBlock";
 import { ReactElement } from "react";
 import { BaseLayout } from "../../layouts/BaseLayout/BaseLayout";
 import { MastersBlock } from "@/components/MastersBlock/MastersBlock";
+import { ProgramsBlock } from "@/components/ProgramsBlock/ProgramsBlock";
 
 
 
@@ -36,6 +37,7 @@ const Home = ()=> {
 
         <InfoBlock />
         <MastersBlock items={reviews} />
+        <ProgramsBlock />
         <div className="md:mt-[60px] mt-4 bg-black">
           <AboutBlock />
         </div>
