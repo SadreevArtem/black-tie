@@ -7,6 +7,7 @@ import Image from "next/image";
 import { Is18Modal } from "../Is18Modal/Is18Modal";
 import { Is18Form } from "../Is18Form/Is18Form";
 import { useAgeCheckStore } from "@/store/is18";
+import { montserrat } from "@/pages";
 
 
 export const Header: React.FC = () => {
@@ -23,13 +24,13 @@ export const Header: React.FC = () => {
   };
 
   return (
-    <header className="md:p-5 p-4 header-scroll fixed top-0 z-10 bg-black w-full">
+    <header className={`md:p-5 p-4 header-scroll fixed top-0 z-10 bg-black w-full  ${montserrat.className}`}>
       <div className={"container flex items-center justify-between min-h-6"}>
         <Link href="/" className="relative block shrink-0">
           <Image src={"/images/logo.svg"} alt="logo" width={100} height={100} />
         </Link>
-        <div className="text-white max-md:hidden px-8 py-2 bg-[#191919] rounded-md">
-          <ul className="flex gap-2">
+        <div className="text-white max-md:hidden lg:px-8 px-2 py-2 bg-[#191919] rounded-md">
+          <ul className="flex gap-2 max-lg:text-sm">
             <li>
               <Link href={"/"}>ГЛАВНАЯ</Link></li>
             <li>

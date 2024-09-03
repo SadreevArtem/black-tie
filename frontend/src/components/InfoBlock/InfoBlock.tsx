@@ -33,7 +33,7 @@ export const InfoBlock: FC = () => {
                   quality={100}
                   height={180}
                 />
-                <div className="text-primary md:text-[28px]">
+                <div className="text-primary md:text-[28px] text-right">
                   <p className="uppercase font-extrabold">сауна</p>
                   <p>для наших сауна круглосуточно! </p>
                   <p>от 2,5 часов программы и БОНУС САУНА </p>

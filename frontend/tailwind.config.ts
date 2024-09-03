@@ -21,7 +21,8 @@ const config: Config = {
       },
       colors: {
         primary: "#DABB74",
-        "bg-opacity": 'rgba(2, 2, 2, 0.5)'
+        "bg-opacity": 'rgba(2, 2, 2, 0.5)',
+        "bg-gray": 'rgba(31, 31, 31)',
       }
     },
   },
