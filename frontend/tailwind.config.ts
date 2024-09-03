@@ -23,6 +23,7 @@ const config: Config = {
         primary: "#DABB74",
         "bg-opacity": 'rgba(2, 2, 2, 0.5)',
         "bg-gray": 'rgba(31, 31, 31)',
+        "text-gray": "#B5B5B5"
       }
     },
   },
