@@ -1,11 +1,19 @@
 import React, { ReactElement } from 'react'
-import { BaseLayout } from '../../../layouts/BaseLayout/BaseLayout'
+
 import { AppHead } from '@/components/AppHead/AppHead'
 import { Header } from '@/components/Header/Header'
-import { montserrat } from '..'
+
 import { MastersList } from '@/components/MastersList/MastersList'
+import { MasterDetailAdmin } from '@/components/MasterDetailAdmin/MasterDetailAdmin'
+import { useRouter } from 'next/router'
+import { montserrat } from '@/pages'
+import { BaseLayout } from '../../../../layouts/BaseLayout/BaseLayout'
+import { MastersDetailClient } from '@/components/MasterDetailClient/MasterDetailClient'
 
 const Masters = () => {
+    const router = useRouter();
+    const id = router.query.id;
+    if(!id) return null;
   return (
     <>
       <AppHead title="Мастера" description="" />
@@ -13,14 +21,10 @@ const Masters = () => {
       <div
         className={`container mt-[105px] flex flex-col items-center ${montserrat.className}`}
       >
-        <h1 className="text-lg text-[32px] text-white lg:text-[40px] font-bold md:mt-12 mt-8">
-          МАСТЕРА
-        </h1>
-        <p className="text-white text-center lg:text-[24px] mt-8">
-          Самые красивые и профессиональные мастера помогут вам максимально
-          расслабиться в нашем удивительном салоне эротического массажа
-        </p>
-        <MastersList />
+        {/* <h1 className="text-lg text-[32px] text-white lg:text-[40px] font-bold md:mt-12 mt-8">
+          МАСТЕР
+        </h1> */}
+        <MastersDetailClient id={+id} />
       </div>
     </>
   );

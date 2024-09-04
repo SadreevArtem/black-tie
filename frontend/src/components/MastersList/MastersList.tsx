@@ -1,6 +1,5 @@
-import { api } from '@/pages/api/api';
 import { useQuery } from '@tanstack/react-query';
-import React from 'react'
+import React, { useState } from 'react'
 import { Master } from '../MastersBlock/MastersBlock';
 import { reviews } from '@/shared/static';
 import Image from 'next/image';
@@ -8,14 +7,26 @@ import { Button } from '../Button';
 import { useModal } from '@/hooks/useModal';
 import { AppModal } from '../AppModal';
 import { SignUpForm } from '../SignUpForm/SignUpForm';
+import { api } from '@/shared/api/api';
+import { PhotoPopup } from '../PhotoPopup/PhotoPopup';
 
 export const MastersList = () => {
     const { open, handleOpen, handleClose } = useModal();
-    // const getMasters = () => api.getMasters();
-    // const {data: masters = [], isLoading} = useQuery<Master[]>({queryKey:['masters'], queryFn: getMasters});   
+    const [selectedImage, setSelectedImage] = useState<string>("");
+    const {
+      open: openPhoto,
+      handleOpen: handleOpenPhoto,
+      handleClose: handleClosePhoto,
+    } = useModal();
+    const getMasters = () => api.getMasters();
+    const handleImageClick = (url: string) => {
+      setSelectedImage(url);
+      handleOpenPhoto();
+    };
+    const {data: masters = [], isLoading} = useQuery<Master[]>({queryKey:['masters'], queryFn: getMasters});   
   return (
     <div className="w-full mt-24 flex flex-col md:gap-24 gap-12">
-      {reviews.map((master, i) => (
+      {masters.map((master, i) => (
         <article key={master.name.concat(i.toString())} className="w-full">
           <div className="flex items-center md:gap-12 gap-4">
             <div className="">
@@ -85,6 +96,7 @@ export const MastersList = () => {
                 style={{ objectFit: "cover" }}
                 quality={100}
                 src={master.imageSecond}
+                onClick={() => handleImageClick(master.imageSecond)}
                 alt={master.age.toString()}
                 className="rounded-lg md:w-[300px] md:h-[399px] w-[140px] h-[182px]"
                 width={500}
@@ -93,6 +105,7 @@ export const MastersList = () => {
               <Image
                 style={{ objectFit: "cover" }}
                 quality={100}
+                onClick={() => handleImageClick(master.imageThird)}
                 src={master.imageThird}
                 alt={master.age.toString()}
                 className=" rounded-lg md:w-[300px] md:h-[399px] w-[140px] h-[182px]"
@@ -103,6 +116,7 @@ export const MastersList = () => {
                 style={{ objectFit: "cover" }}
                 quality={100}
                 src={master.avatar}
+                onClick={() => handleImageClick(master.avatar)}
                 alt={master.age.toString()}
                 className=" rounded-lg md:w-[300px] md:h-[399px] w-[140px] h-[182px]"
                 width={500}
@@ -114,6 +128,9 @@ export const MastersList = () => {
       ))}
       <AppModal isOpen={open} closeHandler={handleClose}>
         <SignUpForm handleClose={handleClose} />
+      </AppModal>
+      <AppModal isOpen={openPhoto} closeHandler={handleClosePhoto}>
+        <PhotoPopup url={selectedImage||""} />
       </AppModal>
     </div>
   );

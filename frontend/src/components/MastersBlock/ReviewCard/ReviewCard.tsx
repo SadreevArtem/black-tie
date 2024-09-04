@@ -3,6 +3,7 @@ import Image from "next/image";
 import clsx from "clsx";
 import { AppIcon } from "../../AppIcon";
 import { Master } from "../MastersBlock";
+import Link from "next/link";
 
 
 
@@ -14,7 +15,7 @@ type Props = {
 export const ReviewCard: React.FC<Props> = ({ item, className }) => {
 
   return (
-    <>
+    <Link href={`masters/${item.id}`}>
       <div
         className={clsx(
           "relative w-[180px] h-[270px] md:w-[300px] md:h-[420px] overflow-hidden",
@@ -39,6 +40,6 @@ export const ReviewCard: React.FC<Props> = ({ item, className }) => {
           </div>
         </div>
       </div>
-    </>
+    </Link>
   );
 };

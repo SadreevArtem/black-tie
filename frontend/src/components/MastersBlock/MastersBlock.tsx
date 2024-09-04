@@ -3,6 +3,8 @@ import clsx from "clsx";
 import { ReviewCard } from "./ReviewCard/ReviewCard";
 import { AppSwiper } from "../AppSwiper/AppSwiper";
 import { SwiperButton } from "../AppSwiper/components/SwiperButton/SwiperButton";
+import { api } from "@/shared/api/api";
+import { useQuery } from "@tanstack/react-query";
 
 
 export type Master = {
@@ -27,15 +29,14 @@ type Props = {
 };
 
 export const MastersBlock: React.FC<Props> = ({
-  items,
   title = "МАСТЕРА",
-  rating = false,
   className
 }) => {
   const [prevEl, setPrevEl] = useState<HTMLButtonElement | null>(null);
   const [nextEl, setNextEl] = useState<HTMLButtonElement | null>(null);
-  const reviews = items.filter((item) => item.published);
-  if (!reviews.length) {
+  const getMasters = () => api.getMasters();
+   const {data: masters = [], isLoading} = useQuery<Master[]>({queryKey:['masters'], queryFn: getMasters});   
+  if (!masters.length) {
     return null;
   }
   return (
@@ -52,7 +53,7 @@ export const MastersBlock: React.FC<Props> = ({
       <AppSwiper
         containerClassName='md:container'
         slideClassName='pb-3 !w-[180px] md:!w-[300px]'
-        items={reviews}
+        items={masters}
         itemsSlideSlot={(item: Master) => <ReviewCard item={item} />}
         prevEl={prevEl}
         nextEl={nextEl}
