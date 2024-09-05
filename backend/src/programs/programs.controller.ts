@@ -28,9 +28,9 @@ export class ProgramsController {
   async findByIdAdmin(@Param('id') id: string) {
     return this.programsService.findByIdAdmin(+id);
   }
-  @Get('id')
+  @Get(':id')
   async findOne(@Param('id') id: string) {
-    return this.programsService.findOne(+id);
+    return this.programsService.findById(+id);
   }
   @UseGuards(JwtGuard)
   @Post()

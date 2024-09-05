@@ -3,25 +3,27 @@ import { BaseLayout } from '../../../layouts/BaseLayout/BaseLayout'
 import { AppHead } from '@/components/AppHead/AppHead'
 import { Header } from '@/components/Header/Header'
 import { montserrat } from '..'
-import { MastersList } from '@/components/MastersList/MastersList'
+import { ProgramsList } from "@/components/ProgramsList/ProgramsList";
 import { Footer } from '@/components/Footer/Footer'
 
-const Masters = () => {
+const Programs = () => {
   return (
     <>
-      <AppHead title="Мастера" description="" />
+      <AppHead title="Программы" description="" />
       <Header />
       <div
         className={`container mt-[105px] flex flex-col items-center ${montserrat.className}`}
       >
         <h1 className="text-lg text-[32px] text-white lg:text-[40px] font-bold md:mt-12 mt-8">
-          МАСТЕРА
+          ВИДЫ УСЛУГ
         </h1>
-        <p className="text-white text-center lg:text-[24px] mt-8">
-          Самые красивые и профессиональные мастера помогут вам максимально
-          расслабиться в нашем удивительном салоне эротического массажа
+        <p className="text-white text-center font-bold lg:text-[24px] mt-8">
+          Продуманные до мелочей программы.
         </p>
-        <MastersList />
+        <p className="text-center font-bold lg:text-[24px] text-gray-500">
+          Идеальное исполнение!
+        </p>
+        <ProgramsList />
       </div>
       <div className="md:mt-[60px] mt-4">
         <Footer />
@@ -31,7 +33,7 @@ const Masters = () => {
 }
 
 
-Masters.getLayout = function getLayout(page: ReactElement) {
+Programs.getLayout = function getLayout(page: ReactElement) {
     return (
       <BaseLayout>
         {page}
@@ -39,4 +41,4 @@ Masters.getLayout = function getLayout(page: ReactElement) {
     )
   }
 
-export default Masters;
+export default Programs;

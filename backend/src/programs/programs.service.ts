@@ -25,7 +25,7 @@ export class ProgramsService {
   findByIdAdmin(id: number): Promise<Programm | undefined> {
     return this.programmRepository.findOne({ where: { id } });
   }
-  findOne(id: number): Promise<Programm | undefined> {
+  findById(id: number): Promise<Programm | undefined> {
     return this.programmRepository.findOne({ where: { id, published: true } });
   }
   create(createProgrammDto: CreateProgrammDto): Promise<Programm> {

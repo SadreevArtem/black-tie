@@ -26,7 +26,7 @@ export const HamburgerMenu: React.FC<Props> = ({ menu, onClose, className = "" }
                 "bg-bgOpacity": paths[1] === ""
               })}
             >
-              <Link href='/' className='block w-full text-[24px] text-primary font-extrabold' onClick={onClose}>
+              <Link href='/' className='block w-full text-[24px] text-white uppercase' onClick={onClose}>
                 Главная
               </Link>
             </li>
@@ -37,7 +37,7 @@ export const HamburgerMenu: React.FC<Props> = ({ menu, onClose, className = "" }
                   "bg-bgOpacity": asPath.includes(`${item.href}`)
                 })}
               >
-                <Link href={item.href} className={clsx("block w-full text-[24px] text-primary font-extrabold")} onClick={onClose}>
+                <Link href={item.href} className={clsx("block w-full text-[24px] text-white uppercase")} onClick={onClose}>
                   {item.value}
                 </Link>
               </li>

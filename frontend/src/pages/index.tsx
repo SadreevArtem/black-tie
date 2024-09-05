@@ -9,6 +9,8 @@ import { ReactElement } from "react";
 import { BaseLayout } from "../../layouts/BaseLayout/BaseLayout";
 import { MastersBlock } from "@/components/MastersBlock/MastersBlock";
 import { ProgramsBlock } from "@/components/ProgramsBlock/ProgramsBlock";
+import { TelegrammBlock } from "@/components/TelegrammBlock/TelegrammBlock";
+import { Footer } from "@/components/Footer/Footer";
 
 
 
@@ -39,6 +41,9 @@ const Home = ()=> {
         <MastersBlock items={reviews} />
         <ProgramsBlock />
         <div className="md:mt-[60px] mt-4 bg-black">
+          <TelegrammBlock />
+        </div>
+        <div className="md:mt-[60px] mt-4 bg-black">
           <AboutBlock />
         </div>
         {/* <div className="md:mt-[60px] mt-4">
@@ -47,9 +52,9 @@ const Home = ()=> {
         {/* <div className="md:mt-[60px] mt-4">
           <Selections title="Вам точно понравится"/>
         </div> */}
-        {/* <div id="contacts" className="md:mt-[60px] mt-4">
-          <ReviewsBlock items={reviews} />
-        </div> */}
+        <div className="md:mt-[60px] mt-4">
+          <Footer />
+        </div>
       </div>
     </>
   );
