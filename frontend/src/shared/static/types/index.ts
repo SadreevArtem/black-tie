@@ -20,3 +20,10 @@ export type OrderInput = {
     published: boolean;
     createdAt: string;
   };
+
+
+export type FilesModel = {
+  originalname: string,
+  filename: string,
+  path: string,
+}

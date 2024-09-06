@@ -17,6 +17,9 @@ import { AuthModule } from './auth/auth.module';
 import { OrdersModule } from './orders/orders.module';
 import { MastersModule } from './masters/masters.module';
 import { ProgramsModule } from './programs/programs.module';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { join } from 'path';
+import { UploadModule } from './upload/upload.module';
 
 @Module({
   imports: [
@@ -24,13 +27,13 @@ import { ProgramsModule } from './programs/programs.module';
       isGlobal: true,
       load: [configuration],
     }),
-    // ServeStaticModule.forRoot({
-    //   rootPath: join(__dirname, '..', 'uploads'), // Путь к папке с файлами
-    //   serveRoot: '/uploads', // Путь в URL
-    //   serveStaticOptions: {
-    //     index: false, // Отключает автоматический поиск index.html
-    //   },
-    // }),
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'uploads'), // Путь к папке с файлами
+      serveRoot: '/uploads', // Путь в URL
+      serveStaticOptions: {
+        index: false, // Отключает автоматический поиск index.html
+      },
+    }),
     TypeOrmModule.forRootAsync({
       useClass: DatabaseConfigFactory,
     }),
@@ -57,6 +60,7 @@ import { ProgramsModule } from './programs/programs.module';
     OrdersModule,
     MastersModule,
     ProgramsModule,
+    UploadModule,
   ],
   controllers: [AppController],
   providers: [

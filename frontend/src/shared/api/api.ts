@@ -173,29 +173,29 @@ class API {
       },
       body: JSON.stringify(input),
     });
-    // uploadImage = (input: File) => {
-    //   const formData = new FormData();
-    //   formData.append('file', input); // 'file' — имя поля, ожидаемое сервером
+    uploadImage = (input: File) => {
+      const formData = new FormData();
+      formData.append('file', input); // 'file' — имя поля, ожидаемое сервером
     
-    //   return fetch(`${this.baseUrl}/upload`, {
-    //     method: "POST",
-    //     // Не устанавливайте заголовок 'Content-Type' вручную
-    //     body: formData,
-    //   })
-    //   .then((res) => {
-    //     if (!res.ok) {
-    //       throw new Error(`Ошибка HTTP: ${res.status}`);
-    //     }
-    //     return res.json();
-    //   })
-    //   .then((data) => {
-    //     return data;
-    //   })
-    //   .catch((error) => {
-    //     console.error('Ошибка при загрузке изображения:', error);
-    //     throw error;
-    //   });
-    // }
+      return fetch(`${this.baseUrl}/upload`, {
+        method: "POST",
+        // Не устанавливайте заголовок 'Content-Type' вручную
+        body: formData,
+      })
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`Ошибка HTTP: ${res.status}`);
+        }
+        return res.json();
+      })
+      .then((data) => {
+        return data;
+      })
+      .catch((error) => {
+        console.error('Ошибка при загрузке изображения:', error);
+        throw error;
+      });
+    }
     
 }
 

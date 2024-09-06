@@ -9,7 +9,8 @@ import { appToast } from "../AppToast/components/lib/appToast";
 import { api } from "@/shared/api/api";
 import { useAuthStore } from "@/store/auth";
 import { Button } from "../Button";
-import { Programm } from "@/shared/static/types";
+import { FilesModel, Programm } from "@/shared/static/types";
+import { ImageInput } from "../ImageInput/ImageInput";
 
 
 type Props = {
@@ -42,7 +43,7 @@ export const ProgrammDetailAdmin: React.FC<Props> = ({id}) => {
 
   const updateProgrammFunc = (input: Programm)=> api.updateProgramm(input, token);
   const createProgrammFunc = (input: Programm)=> api.createProgramm(input, token);
-  // const uploadImageFunc = (file: File) => api.uploadImage(file);
+  const uploadImageFunc = (file: File) => api.uploadImage(file);
   const mutation = useMutation( {
     mutationFn: isEdit? updateProgrammFunc : createProgrammFunc,
     onSuccess: () => {
@@ -54,16 +55,16 @@ export const ProgrammDetailAdmin: React.FC<Props> = ({id}) => {
       appToast.error("Произошла ошибка");
     },
   })
-  // const uploadImageMutation = useMutation({
-  //   mutationFn: uploadImageFunc,
-  //   onSuccess: (res: FilesModel) => {
-  //     appToast.success("Успешно загружено");
-  //     setValue("image", res.path);
-  //   },
-  // });
-//   const uploadImageHandler: (image?: File | null) => void = (image) => {
-// uploadImageMutation.mutate( image as File );
-//   };
+  const uploadImageMutation = useMutation({
+    mutationFn: uploadImageFunc,
+    onSuccess: (res: FilesModel) => {
+      appToast.success("Успешно загружено");
+      setValue("image", res.path);
+    },
+  });
+  const uploadImageHandler: (image?: File | null) => void = (image) => {
+uploadImageMutation.mutate( image as File );
+  };
   const deleteMutation  = useMutation( {
     mutationFn: ()=> api.deleteProgramm(id, token),
     onSuccess: () => {
@@ -80,9 +81,9 @@ export const ProgrammDetailAdmin: React.FC<Props> = ({id}) => {
     mutation.mutate({
       ...data,
     });
-    // const deleteImageHandler = async () => {
-    //   setValue("image", "");
-    // };
+    const deleteImageHandler = async () => {
+      setValue("image", "");
+    };
   useEffect(() => {
     if (!master) return;
     Object.keys(master).forEach((key) => {
@@ -151,9 +152,9 @@ export const ProgrammDetailAdmin: React.FC<Props> = ({id}) => {
                 <Button title="Удалить" onButtonClick={onDeleteClick} />
               </div>
             </form>
-            {/* <Controller
+            <Controller
               control={control}
-              name="avatar"
+              name="image"
               render={({ field }) => (
                 <ImageInput
                   addAlert={() => console.log("alert")}
@@ -165,7 +166,7 @@ export const ProgrammDetailAdmin: React.FC<Props> = ({id}) => {
                   onDelete={deleteImageHandler}
                 />
               )}
-            /> */}
+            />
           </div>
         </section>
       )}

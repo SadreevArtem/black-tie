@@ -10,6 +10,8 @@ import { Master } from "../MastersBlock/MastersBlock";
 import { api } from "@/shared/api/api";
 import { useAuthStore } from "@/store/auth";
 import { Button } from "../Button";
+import { FilesModel } from "@/shared/static/types";
+import { ImageInput } from "../ImageInput/ImageInput";
 
 
 type Props = {
@@ -42,7 +44,7 @@ export const MasterDetailAdmin: React.FC<Props> = ({id}) => {
 
   const updateMasterFunc = (input: Master)=> api.updateMaster(input, token);
   const createMasterFunc = (input: Master)=> api.createMaster(input, token);
-  // const uploadImageFunc = (file: File) => api.uploadImage(file);
+  const uploadImageFunc = (file: File) => api.uploadImage(file);
   const mutation = useMutation( {
     mutationFn: isEdit? updateMasterFunc : createMasterFunc,
     onSuccess: () => {
@@ -54,16 +56,36 @@ export const MasterDetailAdmin: React.FC<Props> = ({id}) => {
       appToast.error("Произошла ошибка");
     },
   })
-  // const uploadImageMutation = useMutation({
-  //   mutationFn: uploadImageFunc,
-  //   onSuccess: (res: FilesModel) => {
-  //     appToast.success("Успешно загружено");
-  //     setValue("image", res.path);
-  //   },
-  // });
-//   const uploadImageHandler: (image?: File | null) => void = (image) => {
-// uploadImageMutation.mutate( image as File );
-//   };
+  const uploadImageMutation = useMutation({
+    mutationFn: uploadImageFunc,
+    onSuccess: (res: FilesModel) => {
+      appToast.success("Успешно загружено");
+      setValue("avatar", res.path);
+    },
+  });
+  const uploadImageSecondMutation = useMutation({
+    mutationFn: uploadImageFunc,
+    onSuccess: (res: FilesModel) => {
+      appToast.success("Успешно загружено");
+      setValue("imageSecond", res.path);
+    },
+  });
+  const uploadImageThirdMutation = useMutation({
+    mutationFn: uploadImageFunc,
+    onSuccess: (res: FilesModel) => {
+      appToast.success("Успешно загружено");
+      setValue("imageThird", res.path);
+    },
+  });
+  const uploadImageHandler: (image?: File | null) => void = (image) => {
+    uploadImageMutation.mutate( image as File );
+  };
+  const uploadImageSecondHandler: (image?: File | null) => void = (image) => {
+    uploadImageSecondMutation.mutate( image as File );
+  };
+  const uploadImageThirdHandler: (image?: File | null) => void = (image) => {
+    uploadImageThirdMutation.mutate( image as File );
+  };
   const deleteMutation  = useMutation( {
     mutationFn: ()=> api.deleteMaster(id, token),
     onSuccess: () => {
@@ -84,9 +106,15 @@ export const MasterDetailAdmin: React.FC<Props> = ({id}) => {
       weight: +data.weight,
       size: +data.size,
     });
-    // const deleteImageHandler = async () => {
-    //   setValue("image", "");
-    // };
+    const deleteImageHandler = async () => {
+      setValue("avatar", "");
+    };
+    const deleteImageSecondHandler = async () => {
+      setValue("imageSecond", "");
+    };
+    const deleteImageThirdHandler = async () => {
+      setValue("imageThird", "");
+    };
   useEffect(() => {
     if (!master) return;
     Object.keys(master).forEach((key) => {
@@ -105,7 +133,7 @@ export const MasterDetailAdmin: React.FC<Props> = ({id}) => {
             </h2>
             <Button onButtonClick={() => router.back()} title="Назад"></Button>
           </div>
-          <div className="flex justify-between">
+          <div className="flex justify-between gap-8">
             <form
               onSubmit={handleSubmit(onSubmit)}
               className="md:w-[50%] py-4 flex flex-col md:gap-6 gap-4"
@@ -159,7 +187,8 @@ export const MasterDetailAdmin: React.FC<Props> = ({id}) => {
                 <Button title="Удалить" onButtonClick={onDeleteClick} />
               </div>
             </form>
-            {/* <Controller
+            <div className="flex w-full flex-col">
+            <Controller
               control={control}
               name="avatar"
               render={({ field }) => (
@@ -173,7 +202,40 @@ export const MasterDetailAdmin: React.FC<Props> = ({id}) => {
                   onDelete={deleteImageHandler}
                 />
               )}
-            /> */}
+            />
+            <Controller
+              control={control}
+              name="imageSecond"
+              render={({ field }) => (
+                <ImageInput
+                  addAlert={() => console.log("alert")}
+                  url={field?.value ?? ""}
+                  value={{ path: field.value }}
+                  onUpdate={field.onChange}
+                  withPreview={false}
+                  onChange={uploadImageSecondHandler}
+                  onDelete={ deleteImageSecondHandler}
+                />
+              )}
+            />
+            <Controller
+              control={control}
+              name="imageThird"
+              render={({ field }) => (
+                <ImageInput
+                  addAlert={() => console.log("alert")}
+                  url={field?.value ?? ""}
+                  value={{ path: field.value }}
+                  onUpdate={field.onChange}
+                  withPreview={false}
+                  onChange={uploadImageThirdHandler}
+                  onDelete={deleteImageThirdHandler}
+                />
+              )}
+            />
+
+            </div>
+            
           </div>
         </section>
       )}
