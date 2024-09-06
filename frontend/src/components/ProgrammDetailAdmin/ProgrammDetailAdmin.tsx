@@ -126,7 +126,12 @@ export const ProgrammDetailAdmin: React.FC<Props> = ({id}) => {
               {errors.image && (
                 <span className="text-red-500">Обязательно для заполнения</span>
               )}
-
+              <TextField
+                variant="outlined"
+                label="Услуги"
+                multiline 
+                {...register("services")}
+              />
               <Controller
                 name="published"
                 control={control}

@@ -16,6 +16,7 @@ export type OrderInput = {
     description: string;
     image: string;
     currentPrice: string;
+    services: string;
     published: boolean;
     createdAt: string;
   };

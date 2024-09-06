@@ -9,7 +9,7 @@ import { Footer } from '@/components/Footer/Footer'
 const Programs = () => {
   return (
     <>
-      <AppHead title="Программы" description="" />
+      <AppHead title="Программы эротического массажа в Тюмени." description="спа-салон релакс массажа в Тюмени, цены на массаж" />
       <Header />
       <div
         className={`container mt-[105px] flex flex-col items-center ${montserrat.className}`}

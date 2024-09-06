@@ -3,6 +3,7 @@ import Image from "next/image";
 import clsx from "clsx";
 import { Programm } from "@/shared/static/types";
 import { Button } from "@/components/Button";
+import Link from "next/link";
 
 
 
@@ -33,9 +34,18 @@ export const ProgrammCard: React.FC<Props> = ({ item, className }) => {
               className="w-full h-full rounded-md object-cover"
             />
             <div className="absolute p-2 py-3 top-0 bottom-0 left-0 right-0 text-white md:text-lg flex flex-col items-start justify-between">
-              <div className="bg-[#323232] opacity-50 p-2 md:px-12 px-6 uppercase md:text-[24px] text-[16px] rounded-[80px]">{item.currentPrice}</div>
-              <div className="md:text-[42px] text-[24px] uppercase">{item.name}</div>
-              <Button title="подробнее" className="!bg-[#323232] opacity-50 font-normal my-0 ml-auto md:px-12 px-6"/>
+              <div className="bg-[#323232] opacity-50 p-2 md:px-12 px-6 uppercase md:text-[24px] text-[16px] rounded-[80px]">
+                {item.currentPrice}
+              </div>
+              <div className="md:text-[42px] text-[24px] uppercase">
+                {item.name}
+              </div>
+              <Link href={`/programs/${item.id}`}>
+                <Button
+                  title="подробнее"
+                  className="!bg-[#323232] opacity-50 font-normal my-0 ml-auto md:px-12 px-6"
+                />
+              </Link>
             </div>
           </div>
         </div>
