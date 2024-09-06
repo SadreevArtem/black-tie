@@ -1,6 +1,5 @@
 import {
   IsBoolean,
-  IsNumber,
   IsOptional,
   IsString,
   IsUrl,
@@ -19,8 +18,11 @@ export class CreateProgrammDto {
   @IsUrl()
   image: string;
   @IsOptional()
-  @IsNumber()
+  @IsString()
   currentPrice: string;
+  @IsOptional()
+  @IsString()
+  services: string;
   @IsBoolean()
   published: boolean;
 }

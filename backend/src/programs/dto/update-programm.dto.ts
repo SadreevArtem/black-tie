@@ -1,7 +1,6 @@
 import { PartialType } from '@nestjs/mapped-types';
 import {
   IsBoolean,
-  IsNumber,
   IsOptional,
   IsString,
   IsUrl,
@@ -16,13 +15,18 @@ export class UpdateProgrammDto extends PartialType(CreateProgrammDto) {
   name: string;
   @IsString()
   @IsOptional()
-  @Length(2, 200)
+  @Length(2, 300)
   description: string;
   @IsOptional()
   @IsUrl()
   image: string;
-  @IsNumber()
+  @IsOptional()
+  @IsString()
   currentPrice: string;
+  @IsOptional()
+  @IsString()
+  services: string;
+  @IsOptional()
   @IsBoolean()
   published: boolean;
 }

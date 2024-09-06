@@ -25,6 +25,8 @@ export class Programm {
   image: string;
   @Column()
   currentPrice: string;
+  @Column({ default: '' })
+  services: string;
   @Column({ default: false })
   published: boolean;
   @Column()
