@@ -5,6 +5,7 @@ import { FC } from "react"
 export const AboutBlock: FC = () => {
     return (
       <div className="container text-white flex flex-col items-center gap-4">
+        <h1 className="opacity-0 text-[1px]">Эротический массаж в Тюмени для мужчин</h1>
         <h2 className="text-lg md:text-xl text-white lg:text-2xl font-extrabold">
           О МУЖСКОМ КЛУБЕ ”CHOCOLATE”
         </h2>
