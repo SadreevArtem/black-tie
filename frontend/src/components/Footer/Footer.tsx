@@ -12,8 +12,8 @@ export const Footer: React.FC = () => {
             <div className="relative flex flex-col md:flex-row gap-4 items-center">
               <Link href="/" className="relative block shrink-0">
                 <div className="flex flex-col items-center">
-                  <span className="text-2xl text-primary font-extrabold md:mb-4">
-                    ГОСТЬ
+                  <span className="text-2xl text-white font-extrabold md:mb-4">
+                    гость
                   </span>
                 </div>
               </Link>
@@ -33,9 +33,9 @@ export const Footer: React.FC = () => {
               </Link>
             </div>
           </div>
-          <div className="text-primary flex flex-col gap-2">
-            <h5 className="font-extrabold text-2xl uppercase md:mb-4">
-              Платформа
+          <div className="text-white flex flex-col gap-2">
+            <h5 className="font-extrabold text-2xl  md:mb-4">
+              платформы
             </h5>
             <Link
               href={"https://t.me/Cchocolate_tmn"}
@@ -50,9 +50,9 @@ export const Footer: React.FC = () => {
               WhatsApp
             </Link>
           </div>
-          <div className="text-primary flex flex-col gap-2">
-            <h5 className="font-extrabold text-2xl uppercase md:mb-4">
-              Связаться с нами
+          <div className="text-white flex flex-col gap-2">
+            <h5 className="font-extrabold text-2xl  md:mb-4">
+              связаться с нами:
             </h5>
             <Link
               href={`tel:+79088791922`}
@@ -61,9 +61,9 @@ export const Footer: React.FC = () => {
               +7 (922) 005-76-17
             </Link>
           </div>
-          <div className="text-primary flex flex-col gap-2">
-            <h5 className="font-extrabold text-2xl uppercase md:mb-4">
-              мы находимся по адресу
+          <div className="text-white flex flex-col gap-2">
+            <h5 className="font-extrabold text-2xl  md:mb-4">
+              мы находимся по адресу:
             </h5>
             <p className="text-white">город Тюмень</p>
             <p className="text-white">Солнечный проезд 22</p>

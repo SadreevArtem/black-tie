@@ -18,10 +18,10 @@ export const AboutBlock: FC = () => {
         </div>
         {aboutInfo.map((info) => (
           <div key={info.title} className="flex flex-col items-center">
-            <div className="bg-[#191919] lg:min-w-[200px] text-center py-3 px-6 rounded-md text-lg font-bold">
+            <div className="bg-[#191919] lg:min-w-[337px] text-center py-3 px-6 rounded-[40px] text-2xl font-bold">
               {info.title}
             </div>
-            <p className="mt-2 lg:max-w-[700px] text-center text-lg">
+            <p className="mt-2 lg:max-w-[450px] text-center text-lg">
               {info.description}
             </p>
           </div>

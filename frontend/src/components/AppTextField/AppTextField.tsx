@@ -34,7 +34,7 @@ export const AppTextField: React.FC<AppTextFieldProps> = ({
   ...props
 }) => {
   const commonClassNames = clsx(
-    "w-full px-8 text-[18px] md:text-[24px] bg-bg-opacity rounded-[80px] text-white placeholder:text-gray",
+    "w-full px-8 text-[18px] md:text-[24px] bg-bbg rounded-[80px] text-white placeholder:text-[rgba(154,149,146)]",
     "hover:border-gray-2 focus:border-primary disabled:bg-gray-5 disabled:border-gray-4 disabled:text-gray",
     {
       "pt-5 md:pt-6": label,
@@ -47,7 +47,7 @@ export const AppTextField: React.FC<AppTextFieldProps> = ({
     <label className={clsx("block relative", className)}>
       {label && (
         <span
-          className={clsx("absolute text-gray left-[17px] top-2 md:top-3 block text-xs", {
+          className={clsx("absolute text-white left-[17px] top-2 md:top-3 block text-xs", {
             "pt-2 md:pt-3 pl-4 pb-2 !left-[1px] !top-[1px] right-2 md:right-5 bg-white rounded-3":
               props.tag === "textarea",
             "!bg-gray-5": props.tag === "textarea" && props.disabled,
@@ -64,8 +64,8 @@ export const AppTextField: React.FC<AppTextFieldProps> = ({
             type={type}
             {...omit("tag", props)}
             className={clsx(
-              "md:h-[52px] h-[42px] outline-none",
-              { "md:h-[64px] ": !label },
+              "md:h-[42px] h-[42px] outline-none",
+              { "md:h-[54px] ": !label },
               commonClassNames
             )}
           />

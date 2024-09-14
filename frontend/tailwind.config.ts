@@ -21,9 +21,11 @@ const config: Config = {
       },
       colors: {
         primary: "#DABB74",
-        "bg-opacity": 'rgba(2, 2, 2, 0.5)',
+        "bg-opacity": 'rgba(29, 23, 20)',
         "bg-gray": 'rgba(31, 31, 31)',
-        "text-gray": "#B5B5B5"
+        "text-gray": "#B5B5B5",
+        "brown": 'rgba(18, 13, 13, 1)',
+        "bbg":'rgba(79, 73, 69)'
       }
     },
   },

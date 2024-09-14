@@ -19,7 +19,7 @@ export const ReviewCard: React.FC<Props> = ({ item, className }) => {
       <div
         className={clsx(
           "relative w-[180px] h-[270px] md:w-[300px] md:h-[420px] overflow-hidden",
-          "shadow-base rounded-md md:rounded-lg pb-0 group hover:cursor-pointer",
+          "shadow-base rounded-md md:rounded-[20px] pb-0 group hover:cursor-pointer",
           className
         )}
         onClick={() => console.log("click")}
@@ -31,7 +31,7 @@ export const ReviewCard: React.FC<Props> = ({ item, className }) => {
               src={item.avatar || "/images/empty.png"}
               alt={item.name || "Аватар"}
               fill
-              className="w-full h-full rounded-md object-cover"
+              className="w-full h-full rounded-[20px] object-cover"
             />
           </div>
 

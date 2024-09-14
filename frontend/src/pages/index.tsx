@@ -20,7 +20,7 @@ export const montserrat = Montserrat({
 });
 
 export const MetaData = {
-  title: "Эротический массаж в Тюмени | spa-choсolate, эротический массаж, эромассаж, Тюмень",
+  title: "Эротический массаж в Тюмени | spa-choсolate, эромассаж",
   description: "Салон эротического массажа в Тюмени для мужчин ✅ Проверенные фотографии и реальные отзывы, цена, телефон, лучший массаж в Тюмени",
   keywords: "Эротический массаж в Тюмени, эротический массаж, эромассаж, Тюмень"
 };
@@ -41,10 +41,10 @@ const Home = ()=> {
         <InfoBlock />
         <MastersBlock items={reviews} />
         <ProgramsBlock />
-        <div className="md:mt-[60px] mt-4 bg-black">
+        <div className="md:mt-[60px] mt-4">
           <TelegrammBlock />
         </div>
-        <div className="md:mt-[60px] mt-4 bg-black">
+        <div className="md:mt-[60px] mt-4">
           <AboutBlock />
         </div>
         {/* <div className="md:mt-[60px] mt-4">

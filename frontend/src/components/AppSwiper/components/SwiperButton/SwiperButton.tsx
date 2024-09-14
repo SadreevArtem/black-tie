@@ -16,7 +16,7 @@ export const SwiperButton = forwardRef<HTMLButtonElement, Props>(
         ref={ref}
         className={clsx(
           "w-12 h-12 flex items-center justify-center",
-          "rounded-full bg-black shadow-base text-primary hover:opacity-70 border border-primary",
+          "rounded-full  shadow-base text-white hover:opacity-70 border border-white",
           className
         )}
         onClick={onClick}

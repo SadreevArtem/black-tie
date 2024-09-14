@@ -45,7 +45,7 @@ export const ModalContent: React.FC<PropsWithChildren<PropsModal>> = ({
   return (
     <div
       className={clsx(
-        "relative p-4 top-1/2 transform -translate-y-1/2 m-auto bg-[rgba(87,87,87)] rounded-[12px] md:p-[24px] max-w-[480px]",
+        "relative p-4 top-1/2 transform -translate-y-1/2 m-auto bg-[rgba(154,149,146)] rounded-[12px] md:p-[24px] max-w-[480px]",
         className
       )}
     >
@@ -55,7 +55,7 @@ export const ModalContent: React.FC<PropsWithChildren<PropsModal>> = ({
           className='absolute right-4 md:right-[24px] md:top-[24px]'
           onClick={closeHandler}
         >
-          <AppIcon type='close' className='text-primary max-md:w-6 max-md:h-6' />
+          <AppIcon type='close' className='text-brown max-md:w-6 max-md:h-6' />
         </button>
       )}
 
