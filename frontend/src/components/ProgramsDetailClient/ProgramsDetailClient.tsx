@@ -27,7 +27,7 @@ export const ProgramsDetailClient:FC<Props> = ({id}) => {
   return (
     <div className="w-full md:mt-24 mt-8 flex flex-col md:gap-24 gap-12">
       <article>
-        <div className="flex gap-8 max-md:flex-col">
+        <div className="flex md:gap-8 gap-4 max-md:flex-col">
           <div className="relative md:w-[40%] md:h-[360px] h-[220px] shrink-0">
             <Image
               src={programm.image || "/images/empty.png"}
@@ -38,7 +38,7 @@ export const ProgramsDetailClient:FC<Props> = ({id}) => {
           </div>
           <div className='flex flex-col gap-2'>
             <div className='flex items-center gap-4'>
-              <Image src={"/images/clock.png"} alt="clock" width={67} height={67}/>
+              <Image src={"/images/clock.png"} alt="clock" width={35} height={35} className='max-md:w-[30px]'/>
               <p className='text-white text-3xl'>{programm.currentPrice}</p>
             </div>
             <p className='text-white lg:text-[42px] text-[24px] font-extrabold uppercase'>{programm.name}</p>
