@@ -2,14 +2,12 @@ import React, { ReactElement } from 'react'
 
 import { AppHead } from '@/components/AppHead/AppHead'
 import { Header } from '@/components/Header/Header'
-
-import { MastersList } from '@/components/MastersList/MastersList'
-import { MasterDetailAdmin } from '@/components/MasterDetailAdmin/MasterDetailAdmin'
 import { useRouter } from 'next/router'
 import { montserrat } from '@/pages'
 import { BaseLayout } from '../../../../layouts/BaseLayout/BaseLayout'
 import { MastersDetailClient } from '@/components/MasterDetailClient/MasterDetailClient'
 import { Footer } from '@/components/Footer/Footer'
+import { Call } from '@/components/Call/Call'
 
 const Masters = () => {
     const router = useRouter();
@@ -30,6 +28,7 @@ const Masters = () => {
       <div className="md:mt-[60px] mt-4">
         <Footer />
       </div>
+      <Call />
     </>
   );
 }

@@ -7,6 +7,7 @@ import { BaseLayout } from '../../../../layouts/BaseLayout/BaseLayout'
 // import { MastersDetailClient } from '@/components/MasterDetailClient/MasterDetailClient'
 import { Footer } from '@/components/Footer/Footer'
 import { ProgramsDetailClient } from '@/components/ProgramsDetailClient/ProgramsDetailClient'
+import { Call } from '@/components/Call/Call'
 
 const ProgramsDetail = () => {
     const router = useRouter();
@@ -24,6 +25,7 @@ const ProgramsDetail = () => {
       <div className="md:mt-[60px] mt-4">
         <Footer />
       </div>
+      <Call />
     </>
   );
 }

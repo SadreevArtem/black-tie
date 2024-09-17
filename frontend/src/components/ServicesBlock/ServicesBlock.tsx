@@ -22,7 +22,7 @@ export const ServicesBlock: React.FC<Props> = ({
   const services = [
     {id:1,
       name:"",
-      description: "<b>такси до салона</b><br/> удовольствие начинается с комфортного такси довезем до салона бесплатно",
+      description: "<b>такси до салона</b><br/> прекрасный вечер начинается с <br/> поездки за наш счет",
       image: "/images/card1.png"},
       {id:2,
         name:"",
@@ -30,11 +30,11 @@ export const ServicesBlock: React.FC<Props> = ({
         image: "/images/card2.png"},
         {id:3,
           name:"",
-          description: "<b>САУНА</b><br/> для наших сауна <b>круглосуточно</b>!<br/> от 2,5 часов программы и БОНУС САУНА ",
+          description: "<b>САУНА</b><br/> для наших гостей сауна <b>круглосуточно</b>!<br/> от 2,5 часов программы и БОНУС САУНА ",
           image: "/images/card4.png"},
           {id:4,
             name:"",
-            description: "Бесплатные напитки из нашего бара!",
+            description: "Бесплатные напитки из нашего бара!",
             image: "/images/card3.png"},
   ]
   return (

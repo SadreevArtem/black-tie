@@ -5,6 +5,7 @@ import { Header } from '@/components/Header/Header'
 import { montserrat } from '..'
 import { ProgramsList } from "@/components/ProgramsList/ProgramsList";
 import { Footer } from '@/components/Footer/Footer'
+import { Call } from '@/components/Call/Call'
 
 const Programs = () => {
   return (
@@ -28,6 +29,7 @@ const Programs = () => {
       <div className="md:mt-[60px] mt-4">
         <Footer />
       </div>
+      <Call />
     </>
   );
 }

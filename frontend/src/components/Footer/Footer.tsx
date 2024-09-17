@@ -48,7 +48,7 @@ export const Footer: React.FC = () => {
               Telegramm
             </Link>
             <Link
-              href={"https://wa.me/79220057617"}
+              href={"https://wa.me/79220058113"}
               className="text-white w-fit hover:text-hover"
             >
               WhatsApp
@@ -59,10 +59,10 @@ export const Footer: React.FC = () => {
               связаться с нами:
             </h5>
             <Link
-              href={`tel:+79088791922`}
+              href={`tel:+79220058113`}
               className="text-white w-fit hover:text-hover"
             >
-              +7 (922) 005-76-17
+              +7 (922) 005-81-13
             </Link>
           </div>
           <div className="text-white flex flex-col gap-2">
@@ -95,7 +95,7 @@ export const Footer: React.FC = () => {
               <p className="text-white">В Telegramm</p>
             </Link>
             <Link
-              href={"https://wa.me/79220057617"}
+              href={"https://wa.me/79220058113"}
               className="flex items-center gap-2"
             >
               <Image
@@ -117,12 +117,12 @@ export const Footer: React.FC = () => {
               alt=""
             />
             <div className="absolute top-0 bottom-0 left-0 right-0 flex flex-col items-start justify-between px-10 gap-6">
-              <div className="self-center mt-8">
-                <span className=" my-6 block text-center text-brown">Контакты салона</span>
+              <div className="self-center mt-3">
+                <span className="my-6 block text-center rounded-[80px] bg-bg-opacity text-white px-16 py-4 uppercase">Контакты салона</span>
                 <p className="text-white text-center block my-2">город Тюмень,</p>
                 <p className="text-white text-center my-2">Солнечный проезд 22</p>
                 <Link
-                  href={`tel:+79088791922`}
+                  href={`tel:+79220058113`}
                   className="text-white hover:text-hover block text-center"
                 >
                   +7 (922) 005-76-17

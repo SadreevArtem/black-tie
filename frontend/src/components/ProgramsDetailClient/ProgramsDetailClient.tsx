@@ -44,7 +44,7 @@ export const ProgramsDetailClient:FC<Props> = ({id}) => {
             <p className='text-white lg:text-[42px] text-[24px] font-extrabold uppercase'>{programm.name}</p>
             <div className='flex gap-4'>
               <Button onButtonClick={handleOpen} className='bg-white lg:py-4 max-lg:px-4 !m-0 !text-black font-normal hover:bg-white' title='записаться'></Button>
-              <Link href={`tel:+79220057617`}>
+              <Link href={`tel:+79220058113`}>
               <Button title='позвонить' className='!m-0 lg:py-4 max-lg:px-4 !bg-[#323232] opacity-50 font-normal'></Button>
               </Link>
             </div>

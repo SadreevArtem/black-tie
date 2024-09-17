@@ -64,14 +64,14 @@ export const Header: React.FC = () => {
               </div>
             </li>
             <li className="w-[65px] max-md:hidden">
-              <Link className="header-link relative" href="https://t.me/Cchocolate_tmn">
+              <Link className="header-link relative" href="https://t.me/chocolate_spa">
                 <Image src={"/images/tg.svg"} alt="" width={65} height={100} />
               </Link>
             </li>
             <li className="w-[65px] max-md:hidden">
               <Link
                 className="header-link relative top-[4px] left-[5px]"
-                href={"https://wa.me/79220057617"}
+                href={"https://wa.me/79220058113"}
               >
                 <Image src={"/images/wa.svg"} alt="" width={55} height={100} />
               </Link>
@@ -79,7 +79,7 @@ export const Header: React.FC = () => {
             <li className="w-[65px] max-md:hidden">
               <Link
                 className="header-link relative top-[2px] left-[12px]"
-                href={`tel:+79220057617`}
+                href={`tel:+79220058113`}
               >
                 <Image
                   src={"/images/phone.svg"}

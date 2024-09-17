@@ -15,14 +15,21 @@ export class OrdersService {
     return this.orderRepository.find({ order: { createdAt: 'DESC' } });
   }
   async create(createOrderDto: Partial<Order>): Promise<Order> {
-    const order = await this.orderRepository.save(createOrderDto);
+    const order = { ...createOrderDto, createdAt: new Date() };
     await this.telegrammService.sendMessage(
       +process.env.TELEGRAMM_CHAT || 0,
       `${order.name}\n
       ${order.phone}\n
       ${order.createdAt.toLocaleString('ru-RU', { timeZone: 'Asia/Yekaterinburg' })}\n`,
     );
-    return order;
+    return {
+      id: Date.now(),
+      ...order,
+      name: order.name,
+      phone: order.phone,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    };
   }
   remove(id: number) {
     return this.orderRepository.delete({ id });

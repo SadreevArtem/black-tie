@@ -2,7 +2,6 @@ import { Montserrat } from "next/font/google";
 import { AppHead } from "@/components/AppHead/AppHead";
 import { Header } from "@/components/Header/Header";
 import { Author } from "@/components/Author/Author";
-import { InfoBlock } from "@/components/InfoBlock/InfoBlock";
 import { reviews } from "@/shared/static";
 import { AboutBlock } from "@/components/AboutBlock/AboutBlock";
 import { ReactElement } from "react";
@@ -12,6 +11,7 @@ import { ProgramsBlock } from "@/components/ProgramsBlock/ProgramsBlock";
 import { TelegrammBlock } from "@/components/TelegrammBlock/TelegrammBlock";
 import { Footer } from "@/components/Footer/Footer";
 import { ServicesBlock } from "@/components/ServicesBlock/ServicesBlock";
+import { Call } from "@/components/Call/Call";
 
 
 
@@ -58,6 +58,7 @@ const Home = ()=> {
         <div className="md:mt-[60px] mt-4">
           <Footer />
         </div>
+        <Call />
       </div>
     </>
   );

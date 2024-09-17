@@ -4,6 +4,7 @@ import { AppHead } from '@/components/AppHead/AppHead'
 import { Header } from '@/components/Header/Header'
 import { Footer } from '@/components/Footer/Footer'
 import { ModalVacancies } from '@/components/ModalVacancies/ModalVacancies'
+import { Call } from '@/components/Call/Call'
 
 const Vacancies = () => {
   return (
@@ -15,6 +16,7 @@ const Vacancies = () => {
       <div className="md:mt-[60px] mt-4">
         <Footer />
       </div>
+      <Call />
     </>
   );
 }

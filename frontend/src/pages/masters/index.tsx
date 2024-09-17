@@ -5,6 +5,7 @@ import { Header } from '@/components/Header/Header'
 import { montserrat } from '..'
 import { MastersList } from '@/components/MastersList/MastersList'
 import { Footer } from '@/components/Footer/Footer'
+import { Call } from '@/components/Call/Call'
 
 const Masters = () => {
   return (
@@ -26,6 +27,7 @@ const Masters = () => {
       <div className="md:mt-[60px] mt-4">
         <Footer />
       </div>
+      <Call />
     </>
   );
 }
