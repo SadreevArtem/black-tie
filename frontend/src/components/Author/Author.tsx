@@ -55,17 +55,17 @@ export const Author: FC<BannerProps> = ({ images }) => {
               />
             </CSSTransition>
           </SwitchTransition> */}
-           <div
-                    className={`text-white absolute top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col md:text-[28px] text-[22px] text-center items-center`}
-                  >
-                    <Image
-                      src={"/images/Group.svg"}
-                      alt="logo"
-                      width={200}
-                      height={100}
-                      quality={100}
-                    />
-                  </div>
+          <div
+            className={`text-white absolute top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col md:text-[28px] text-[22px] text-center items-center`}
+          >
+            <Image
+              src={"/images/Group.svg"}
+              alt="logo"
+              width={200}
+              height={100}
+              quality={100}
+            />
+          </div>
           <div className="text-white absolute md:bottom-[54px] bottom-[24px] left-1/2 transform -translate-x-1/2 md:text-[28px] text-[22px]">
             <button
               className="mt-12 bg-bg-opacity p-2 md:px-16 px-12 max-md:text-[14px] rounded-[80px] hover:bg-black transition hover:text-primary"
@@ -77,7 +77,7 @@ export const Author: FC<BannerProps> = ({ images }) => {
         </div>
       </div>
       <AppModal isOpen={open} closeHandler={handleClose}>
-        <SignUpForm handleClose={handleClose}/>
+        <SignUpForm handleClose={handleClose} />
       </AppModal>
     </div>
   );

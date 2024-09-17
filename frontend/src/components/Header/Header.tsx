@@ -25,7 +25,7 @@ export const Header: React.FC = () => {
 
   return (
     <header
-      className={`md:p-5 p-4 header-scroll fixed top-0 z-10 bg-black w-full  ${montserrat.className}`}
+      className={`md:p-5 p-4 header-scroll fixed top-0 z-10 bg-[#29231F] w-full  ${montserrat.className}`}
     >
       <div className={"container flex items-center justify-between min-h-6"}>
         <Link href="/" className="relative block shrink-0">

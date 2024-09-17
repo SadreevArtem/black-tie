@@ -27,3 +27,10 @@ export type FilesModel = {
   filename: string,
   path: string,
 }
+
+export type Services = {
+  id: number;
+  name: string;
+  description: string;
+  image: string;
+};

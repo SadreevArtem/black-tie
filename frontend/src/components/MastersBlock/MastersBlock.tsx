@@ -40,7 +40,7 @@ export const MastersBlock: React.FC<Props> = ({
     return null;
   }
   return (
-    <div className={clsx(" py-4", className)}>
+    <div className={clsx("py-4 md:my-4", className)}>
       <div className='container flex items-center md:justify-between mb-6 md:mb-8'>
       <h2 className='self-center text-lg md:text-xl text-white lg:text-2xl max-md:ml-auto mr-auto font-extrabold border-2 rounded-[40px] px-12 py-4 bg-brown border-white'>{title}</h2>
         

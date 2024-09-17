@@ -4,6 +4,9 @@ import { HamburgerMenu } from "../HamburgerMenu";
 import { HeaderMenuItem } from "./static";
 import { AppIcon } from "../AppIcon";
 import clsx from "clsx";
+import { useModal } from "@/hooks/useModal";
+import { AppModal } from "../AppModal";
+import { SignUpForm } from "../SignUpForm/SignUpForm";
 
 
 type Props = {
@@ -22,28 +25,36 @@ export const Hamburger: React.FC<Props> = ({
   className = "string"
 }) => {
   const onToggle = () => (active ? onClose() : onOpen());
+  const { open, handleOpen, handleClose } = useModal();
+
 
   return (
     <>
-      <button onClick={onToggle} className="flex">
-        <div className={clsx("flex flex-col gap-1 ", {hidden: active})}>
-          <div
-            className={clsx("bg-primary w-[22px] h-[2px]")}
+      <div className="flex">
+        <button
+          className={clsx(
+            "mr-2 bg-bg-opacity text-white px-6 py-2 text-[10px] rounded-[80px] hover:bg-black transition hover:text-primary",
+            { hidden: !active }
+          )}
+          onClick={handleOpen}
+        >
+          ЗАПИСАТЬСЯ ОНЛАЙН
+        </button>
+        <button onClick={onToggle} className="flex">
+          <div className={clsx("flex flex-col gap-1 ", { hidden: active })}>
+            <div className={clsx("bg-primary w-[22px] h-[2px]")} />
+            <div className={clsx("bg-primary w-[22px] h-[2px]")} />
+            <div className={clsx("bg-primary w-[22px] h-[2px]")} />
+          </div>
+
+          <AppIcon
+            type="close"
+            className={clsx("text-primary max-md:w-[22px] max-md:h-[22px]", {
+              hidden: !active,
+            })}
           />
-           <div
-            className={clsx("bg-primary w-[22px] h-[2px]")}
-          />
-           <div
-            className={clsx("bg-primary w-[22px] h-[2px]")}
-          />
-        </div>
-        <AppIcon
-          type="close"
-          className={clsx("text-primary max-md:w-[22px] max-md:h-[22px]", {
-            hidden: !active,
-          })}
-        />
-      </button>
+        </button>
+      </div>
       {active &&
         createPortal(
           <HamburgerMenu
@@ -53,6 +64,9 @@ export const Hamburger: React.FC<Props> = ({
           />,
           document.body
         )}
+      <AppModal isOpen={open} closeHandler={handleClose}>
+        <SignUpForm handleClose={handleClose} />
+      </AppModal>
     </>
   );
 };

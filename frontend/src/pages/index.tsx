@@ -11,6 +11,7 @@ import { MastersBlock } from "@/components/MastersBlock/MastersBlock";
 import { ProgramsBlock } from "@/components/ProgramsBlock/ProgramsBlock";
 import { TelegrammBlock } from "@/components/TelegrammBlock/TelegrammBlock";
 import { Footer } from "@/components/Footer/Footer";
+import { ServicesBlock } from "@/components/ServicesBlock/ServicesBlock";
 
 
 
@@ -38,7 +39,8 @@ const Home = ()=> {
           ]}
         />
 
-        <InfoBlock />
+        {/* <InfoBlock /> */}
+        <ServicesBlock />
         <MastersBlock items={reviews} />
         <ProgramsBlock />
         <div className="md:mt-[60px] mt-4">

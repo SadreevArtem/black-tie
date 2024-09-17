@@ -19,10 +19,11 @@ export const TelegrammBlock = () => {
       </div>
       <div className="relative">
         <Image
-          src={"/images/cards.png"}
+          src={"/images/000.png"}
           className="md:h-[600px] w-auto"
           alt="спа-шоколад"
           width={1776}
+          quality={100}
           height={1376}
         />
       </div>

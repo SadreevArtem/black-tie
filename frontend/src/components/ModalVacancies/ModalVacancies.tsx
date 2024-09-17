@@ -19,13 +19,13 @@ export const ModalVacancies = () => {
           Здесь мы найдём применение всем твоим качествам, которыми ты
           обладаешь.
         </p>
-        <Button onButtonClick={handleOpen} className='border border-white mt-12' title='связаться с нами'></Button>
+        <Button onButtonClick={handleOpen} className='border border-white mt-12 py-6 !rounded-[30px]' title='связаться с нами'></Button>
         <div className="text-white grid md:grid-cols-2 md:gap-16 gap-4 md:mt-16 mt-8 w-full">
-          <div className="flex flex-col gap-4 items-center justify-center bg-bg-gray aspect-video rounded-lg">
+          <div className="flex flex-col gap-4 items-center justify-center bg-[rgb(46,40,37)] aspect-video rounded-[40px] border border-white">
             <h3 className="font-bold text-lg md:text-[32px]">МЕНЕДЖЕР</h3>
             <p>от 80 тысяч в месяц</p>
           </div>
-          <div className="flex flex-col gap-4 items-center justify-center aspect-video bg-bg-gray rounded-lg">
+          <div className="flex flex-col gap-4 items-center justify-center aspect-video bg-[rgb(46,40,37)] rounded-[40px] border border-white">
             <h3 className="font-bold text-lg md:text-[32px]">МАСТЕР</h3>
             <p>от 150 тысяч в месяц</p>
           </div>
