@@ -6,6 +6,7 @@ type Props = {
   description: string;
   image?: string | null;
   showCanonical?: boolean;
+  canonicalPath?: string;
   keywords?: string;
 };
 
@@ -14,6 +15,8 @@ export const AppHead: React.FC<React.PropsWithChildren<Props>> = ({
   image,
   title,
   keywords,
+  showCanonical,
+  canonicalPath,
   children
 }) => {
 
@@ -29,6 +32,7 @@ export const AppHead: React.FC<React.PropsWithChildren<Props>> = ({
       <meta property="og:locale" content="ru_RU" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
+      <meta property="og:site_name" content="Салон эротического массажа Тюмень spa-chocolate.ru" />
       <link
         rel="apple-touch-icon"
         sizes="180x180"
@@ -55,7 +59,8 @@ export const AppHead: React.FC<React.PropsWithChildren<Props>> = ({
       <meta name="msapplication-TileColor" content="#da532c"></meta>
       <meta name="theme-color" content="#ffffff"></meta>
       <meta property="og:url" content="https://spa-chocolate.ru" />
-      <link rel="canonical" href="https://spa-chocolate.ru" />
+      {showCanonical && <link rel='canonical' href={canonicalPath} />}
+      {/* <link rel="canonical" href="https://spa-chocolate.ru" /> */}
       {image && <meta property="og:image" content={image} />}
       {children}
     </Head>

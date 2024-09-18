@@ -10,14 +10,15 @@ import { Call } from '@/components/Call/Call'
 const Programs = () => {
   return (
     <>
-      <AppHead title="Программы эротического массажа в Тюмени." description="спа-салон релакс массажа в Тюмени, цены на массаж" />
+      <AppHead title="Программы эромассажа sexy massage Тюмень spa-chocolate.ru" description="спа-салон релакс массажа в Тюмени, цены на массаж" />
       <Header />
       <div
         className={`container mt-[105px] flex flex-col items-center ${montserrat.className}`}
       >
-        <h1 className="text-lg text-[32px] text-white lg:text-[40px] font-bold md:mt-12 mt-8">
+        <h1 className='text-[1px] opacity-5'>массажный салон секс erotic massage</h1>
+        <h2 className="text-lg text-[32px] text-white lg:text-[40px] font-bold md:mt-12 mt-8">
           ВИДЫ УСЛУГ
-        </h1>
+        </h2>
         <p className="text-white text-center font-bold lg:text-[24px] mt-8">
           Продуманные до мелочей программы.
         </p>

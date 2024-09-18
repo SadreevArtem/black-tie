@@ -15,7 +15,7 @@ const ProgramsDetail = () => {
     if(!id) return null;
   return (
     <>
-      <AppHead title="Программа" description="" />
+      <AppHead title="Программа эромассажа" description="" showCanonical canonicalPath='https://spa-chocolate.ru/programs'/>
       <Header />
       <div
         className={`container mt-[105px] flex flex-col items-center ${montserrat.className}`}

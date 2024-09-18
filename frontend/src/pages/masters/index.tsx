@@ -10,14 +10,15 @@ import { Call } from '@/components/Call/Call'
 const Masters = () => {
   return (
     <>
-      <AppHead title="Мастера" description="" />
+      <AppHead title="Мастера эротического массажа Тюмень" description="" />
       <Header />
       <div
         className={`container mt-[105px] flex flex-col items-center ${montserrat.className}`}
       >
-        <h1 className="text-lg text-[32px] text-white lg:text-[40px] font-bold md:mt-12 mt-8">
+        <h1 className='text-[1px] opacity-5'>Мастера эротического массажа, массажистки, erotic massage, xxx </h1>
+        <h2 className="text-lg text-[32px] text-white lg:text-[40px] font-bold md:mt-12 mt-8">
           МАСТЕРА
-        </h1>
+        </h2>
         <p className="text-white text-center lg:text-[24px] mt-8">
           Самые красивые и профессиональные мастера помогут вам максимально
           расслабиться в нашем удивительном салоне эротического массажа

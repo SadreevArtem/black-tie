@@ -15,7 +15,7 @@ const Masters = () => {
     if(!id) return null;
   return (
     <>
-      <AppHead title="Мастера" description="" />
+      <AppHead title="Мастера" description="" showCanonical canonicalPath='https://spa-chocolate.ru/masters'/>
       <Header />
       <div
         className={`container mt-[105px] flex flex-col items-center ${montserrat.className}`}
