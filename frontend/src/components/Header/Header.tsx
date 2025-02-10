@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
+import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { HEADER_MENU } from "../Hamburger/static";
 import { Hamburger } from "../Hamburger";
 import Image from "next/image";
@@ -8,7 +8,6 @@ import { Is18Modal } from "../Is18Modal/Is18Modal";
 import { Is18Form } from "../Is18Form/Is18Form";
 import { useAgeCheckStore } from "@/store/is18";
 import { montserrat } from "@/pages";
-
 
 export const Header: React.FC = () => {
   const [hamburgerActive, setHamburgerActive] = useState(false);
@@ -23,70 +22,97 @@ export const Header: React.FC = () => {
     document.body.style.removeProperty("overflow");
   };
 
+  useEffect(() => {
+    const updateScroll = () => {
+      const header = document.querySelector("header");
+      if (window.scrollY > 0) {
+        header?.classList.add("header-scroll");
+      } else {
+        header?.classList.remove("header-scroll");
+      }
+    };
+
+    window.addEventListener("scroll", updateScroll);
+    return () => window.removeEventListener("scroll", updateScroll);
+  }, []);
+
   return (
     <header
-      className={`md:p-5 p-4 header-scroll fixed top-0 z-10 bg-[#29231F] w-full  ${montserrat.className}`}
+      className={`md:p-5 p-4 fixed top-0 z-10 bg-transparent w-full transition-colors duration-500 delay-300  ${montserrat.className}`}
     >
       <div className={"container flex items-center justify-between min-h-6"}>
-        <Link href="/" className="relative block shrink-0">
-          <Image src={"/images/logo.svg"} alt="logo" width={100} height={100} />
-        </Link>
-        <div className="text-white max-md:hidden lg:px-8 px-2 py-2 bg-[#191919] rounded-md">
-          <ul className="flex gap-2 max-lg:text-sm">
+        <div className="flex items-center gap-[10px] max-lg:hidden">
+          <div className="flex gap-4">
+            <Image
+              src={"/images/location.svg"}
+              alt="log"
+              width={40}
+              height={40}
+            />
+          </div>
+          <div className="text-[20px]">
+            <p className="text-white">г. Тюмень</p>
+            <p className="text-white">ул. Гнаровской, д.6</p>
+          </div>
+        </div>
+
+        <div className="text-white max-md:hidden text-[20px] lg:px-8 px-2 py-2">
+          <ul className="flex gap-[55px] max-lg:text-sm items-center">
             <li>
-              <Link href={"/"}>ГЛАВНАЯ</Link>
+              <Link href={"/"}>Главная</Link>
             </li>
             <li>
-              <Link href={"/programs"}>ПРОГРАММЫ</Link>
+              <Link href={"/programs"}>Программы</Link>
             </li>
             <li>
-              <Link href={"/masters"}>МАСТЕРА</Link>
+              <Link href="/" className="relative block shrink-0">
+                <Image
+                  src={"/images/logo.svg"}
+                  alt="logo"
+                  width={100}
+                  height={100}
+                />
+              </Link>
             </li>
             <li>
-              <Link href={"/vacancies"}>ВАКАНСИИ</Link>
+              <Link href={"/masters"}>Мастера</Link>
+            </li>
+            <li>
+              <Link href={"/vacancies"}>Вакансии</Link>
             </li>
           </ul>
         </div>
         <nav className="flex items-center gap-4">
-          <ul className="flex gap-2 items-center">
-            <li>
-              <div className="flex flex-col items-center gap-2 max-lg:hidden">
-                <div className="flex gap-4">
-                  <Image
-                    src={"/images/location.svg"}
-                    alt="log"
-                    width={20}
-                    height={20}
-                  />
-                <p className="text-white">г. Тюмень</p>
-                </div>
-                <p className="text-white">Солнечный проезд 22</p>
-              </div>
-            </li>
-            <li className="w-[65px] max-md:hidden">
-              <Link className="header-link relative" href="https://t.me/chocolate_spa">
-                <Image src={"/images/tg.svg"} alt="" width={65} height={100} />
-              </Link>
-            </li>
-            <li className="w-[65px] max-md:hidden">
+          <ul className="flex gap-[28px] items-center">
+            <li className="max-md:hidden">
               <Link
-                className="header-link relative top-[4px] left-[5px]"
-                href={"https://wa.me/79220058113"}
-              >
-                <Image src={"/images/wa.svg"} alt="" width={55} height={100} />
-              </Link>
-            </li>
-            <li className="w-[65px] max-md:hidden">
-              <Link
-                className="header-link relative top-[2px] left-[12px]"
-                href={`tel:+79220058113`}
+                className="header-link relative"
+                href="https://t.me/chocolate_spa"
               >
                 <Image
-                  src={"/images/phone.svg"}
+                  src={"/images/telegram.svg"}
                   alt=""
                   width={40}
-                  height={100}
+                  height={40}
                 />
+              </Link>
+            </li>
+            <li className="max-md:hidden">
+              <Link
+                className="header-link relative"
+                href={"https://wa.me/79220058113"}
+              >
+                <Image
+                  src={"/images/whatsapp.svg"}
+                  alt=""
+                  width={40}
+                  height={40}
+                />
+              </Link>
+            </li>
+            <li className="max-md:hidden">
+              <Link className="header-link relative" href={`tel:+79220058113`}>
+                <Image src={"/images/call.svg"} alt="" width={40} height={40} />
               </Link>
             </li>
             <li className={`self-center ml-4 md:hidden`}>

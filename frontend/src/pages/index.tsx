@@ -13,20 +13,20 @@ import { Footer } from "@/components/Footer/Footer";
 import { ServicesBlock } from "@/components/ServicesBlock/ServicesBlock";
 import { Call } from "@/components/Call/Call";
 
-
-
 export const montserrat = Montserrat({
-  subsets: ['latin'],
-  weight: ['400', '700'], // Настраиваешь веса, которые тебе нужны
+  subsets: ["latin"],
+  weight: ["400", "700"], // Настраиваешь веса, которые тебе нужны
 });
 
 export const MetaData = {
-  title: "Салон эротического массажа в Тюмени | spa-choсolate",
-  description: "Салон эротического массажа в Тюмени для мужчин ✅ Проверенные фотографии и реальные отзывы, цена, телефон, лучший массаж в Тюмени",
-  keywords: "Эротический массаж в Тюмени, эротический массаж, эромассаж, Тюмень"
+  title: "Салон эротического массажа в Тюмени | black-tie",
+  description:
+    "Салон эротического массажа в Тюмени для мужчин ✅ Проверенные фотографии и реальные отзывы, цена, телефон, лучший массаж в Тюмени",
+  keywords:
+    "Эротический массаж в Тюмени, эротический массаж, эромассаж, Тюмень",
 };
 
-const Home = ()=> {
+const Home = () => {
   return (
     <>
       <AppHead title={MetaData.title} description={MetaData.description} />
@@ -62,14 +62,10 @@ const Home = ()=> {
       </div>
     </>
   );
-}
+};
 
 Home.getLayout = function getLayout(page: ReactElement) {
-  return (
-    <BaseLayout>
-      {page}
-    </BaseLayout>
-  )
-}
+  return <BaseLayout>{page}</BaseLayout>;
+};
 
 export default Home;

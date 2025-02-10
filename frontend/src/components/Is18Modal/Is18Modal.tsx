@@ -4,6 +4,7 @@ import { createPortal } from "react-dom";
 import { AppIcon } from "../AppIcon";
 import clsx from "clsx";
 import { useScrollbarWidth } from "@/hooks/useScrollbarWidth";
+import { Inter } from "next/font/google";
 
 type Props = {
   isOpen: boolean;
@@ -17,10 +18,15 @@ type PropsModal = {
   className?: string;
 };
 
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
+
 export const ModalContent18: React.FC<PropsWithChildren<PropsModal>> = ({
   children,
   closeHandler,
-  className
+  className,
 }) => {
   const scrollbarWidth = useScrollbarWidth();
 
@@ -45,17 +51,20 @@ export const ModalContent18: React.FC<PropsWithChildren<PropsModal>> = ({
   return (
     <div
       className={clsx(
-        "relative top-0 left-0 h-[100%] w-[100%] bg-[rgba(87,87,87)]  md:p-[24px] flex items-center justify-center",
+        `relative top-0 left-0 h-[100%] w-[100%] bg-black  md:p-[24px] flex items-center justify-center ${inter.className}`,
         className
       )}
     >
       {closeHandler && (
         <button
-          type='button'
-          className='absolute right-4 md:right-[24px] md:top-[24px]'
+          type="button"
+          className="absolute right-4 md:right-[24px] md:top-[24px]"
           onClick={closeHandler}
         >
-          <AppIcon type='close' className='text-primary max-md:w-6 max-md:h-6' />
+          <AppIcon
+            type="close"
+            className="text-primary max-md:w-6 max-md:h-6"
+          />
         </button>
       )}
 
@@ -69,17 +78,16 @@ export const Is18Modal: React.FC<PropsWithChildren<Props>> = ({
   isOpen = false,
   className,
   contentClassName,
-  children
+  children,
 }) => {
-    const [mounted, setMounted] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
-    useEffect(() => {
-      setMounted(true);
-    }, []);
-  
-    if (!mounted) return null;
-    if (!isOpen) return null;
-  
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+  if (!isOpen) return null;
 
   return createPortal(
     <div

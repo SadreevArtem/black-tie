@@ -21,7 +21,7 @@ class API {
         return data;
       });
   };
-  getMastersAll = (token:string) => {
+  getMastersAll = (token: string) => {
     return fetch(`${this.baseUrl}/masters/all`, {
       method: "GET",
       headers: {
@@ -41,7 +41,7 @@ class API {
         return data;
       });
   };
-  getMastersByIdAdmin = (id: number, token:string) => {
+  getMastersByIdAdmin = (id: number, token: string) => {
     return fetch(`${this.baseUrl}/masters/all/${id}`, {
       method: "GET",
       headers: {
@@ -84,7 +84,7 @@ class API {
       },
     });
   };
-  getProgramsAll = (token:string) => {
+  getProgramsAll = (token: string) => {
     return fetch(`${this.baseUrl}/programs/all`, {
       method: "GET",
       headers: {
@@ -111,7 +111,7 @@ class API {
         return data;
       });
   };
-  getProgramsByIdAdmin = (id: number, token:string) => {
+  getProgramsByIdAdmin = (id: number, token: string) => {
     return fetch(`${this.baseUrl}/programs/all/${id}`, {
       method: "GET",
       headers: {
@@ -173,15 +173,15 @@ class API {
       },
       body: JSON.stringify(input),
     });
-    uploadImage = (input: File) => {
-      const formData = new FormData();
-      formData.append('file', input); // 'file' — имя поля, ожидаемое сервером
-    
-      return fetch(`${this.baseUrl}/upload`, {
-        method: "POST",
-        // Не устанавливайте заголовок 'Content-Type' вручную
-        body: formData,
-      })
+  uploadImage = (input: File) => {
+    const formData = new FormData();
+    formData.append("file", input); // 'file' — имя поля, ожидаемое сервером
+
+    return fetch(`${this.baseUrl}/upload`, {
+      method: "POST",
+      // Не устанавливайте заголовок 'Content-Type' вручную
+      body: formData,
+    })
       .then((res) => {
         if (!res.ok) {
           throw new Error(`Ошибка HTTP: ${res.status}`);
@@ -192,12 +192,12 @@ class API {
         return data;
       })
       .catch((error) => {
-        console.error('Ошибка при загрузке изображения:', error);
+        console.error("Ошибка при загрузке изображения:", error);
         throw error;
       });
-    }
-    
+  };
 }
 
+// export const api = new API('https://api.spa-chocolate.ru')
 
-export const api = new API('https://api.spa-chocolate.ru')
+export const api = new API("http://localhost:3000");

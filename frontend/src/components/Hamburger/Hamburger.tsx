@@ -8,7 +8,6 @@ import { useModal } from "@/hooks/useModal";
 import { AppModal } from "../AppModal";
 import { SignUpForm } from "../SignUpForm/SignUpForm";
 
-
 type Props = {
   menu: HeaderMenuItem[];
   active: boolean;
@@ -22,11 +21,10 @@ export const Hamburger: React.FC<Props> = ({
   active,
   onOpen,
   onClose,
-  className = "string"
+  className = "string",
 }) => {
   const onToggle = () => (active ? onClose() : onOpen());
   const { open, handleOpen, handleClose } = useModal();
-
 
   return (
     <>
@@ -42,6 +40,7 @@ export const Hamburger: React.FC<Props> = ({
         </button>
         <button onClick={onToggle} className="flex">
           <div className={clsx("flex flex-col gap-1 ", { hidden: active })}>
+            <div className={clsx("bg-primary w-[22px] h-[2px]")} />
             <div className={clsx("bg-primary w-[22px] h-[2px]")} />
             <div className={clsx("bg-primary w-[22px] h-[2px]")} />
             <div className={clsx("bg-primary w-[22px] h-[2px]")} />
