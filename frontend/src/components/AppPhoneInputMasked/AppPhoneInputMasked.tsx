@@ -20,7 +20,7 @@ export const AppPhoneInputMasked: React.FC<Props> = ({
   onChange,
   disabled,
   mask = "+7 (999) 999-99-99",
-  placeholder = "+7 (900) 000-00-00",
+  placeholder = "+7 (___) ___-__-__",
   className,
   ...props
 }) => {
@@ -33,7 +33,7 @@ export const AppPhoneInputMasked: React.FC<Props> = ({
       value={value}
       onChange={onChange}
     >
-      <AppTextField className={className} tag='input' {...props} />
+      <AppTextField className={className} tag="input" {...props} />
     </InputMask>
   );
 };

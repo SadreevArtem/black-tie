@@ -14,10 +14,11 @@ export const Author: FC<BannerProps> = ({ images }) => {
 
   return (
     <div className="w-full h-[100vh]">
-      <div className="flex justify-center items-start h-[100vh] relative">
+      <div className="flex justify-center items-start h-[100vh] relative ">
+        <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black to-transparent" />
         <div className="w-full h-full">
           <div
-            className={`text-white h-[100vh] flex flex-col md:text-[28px] text-[22px] text-center items-center`}
+            className={`text-white h-[100vh] flex flex-col md:text-[28px] text-[22px] text-center items-center `}
           >
             <Image
               src={"/images/massage.jpg"}
@@ -28,9 +29,9 @@ export const Author: FC<BannerProps> = ({ images }) => {
               quality={100}
             />
           </div>
-          <div className="text-white absolute md:bottom-[54px] bottom-[84px] left-1/2 transform -translate-x-1/2 md:text-[28px] text-[22px]">
+          <div className="text-white absolute md:bottom-[54px] bottom-[84px] left-1/2 transform -translate-x-1/2 md:text-[24px] text-[15px]">
             <button
-              className="mt-12 bg-bg-opacity p-2 md:px-16 px-12 max-md:text-[14px] rounded-[80px] hover:bg-black transition hover:text-primary"
+              className="shadow-button mt-12 bg-white/20 hover:border p-6 md:px-[100px] px-12 max-md:text-[14px] rounded-[5px]  transition"
               onClick={handleOpen}
             >
               Записаться онлайн

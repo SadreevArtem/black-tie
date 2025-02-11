@@ -20,7 +20,7 @@ type PropsModal = {
 export const ModalContent: React.FC<PropsWithChildren<PropsModal>> = ({
   children,
   closeHandler,
-  className
+  className,
 }) => {
   const scrollbarWidth = useScrollbarWidth();
 
@@ -45,17 +45,17 @@ export const ModalContent: React.FC<PropsWithChildren<PropsModal>> = ({
   return (
     <div
       className={clsx(
-        "relative p-4 top-1/2 transform -translate-y-1/2 m-auto bg-[rgba(154,149,146)] rounded-[12px] md:p-[24px] max-w-[480px]",
+        "relative p-8 top-1/2 transform -translate-y-1/2 m-auto bg-black md:p-16 max-w-[580px]",
         className
       )}
     >
       {closeHandler && (
         <button
-          type='button'
-          className='absolute right-4 md:right-[24px] md:top-[24px]'
+          type="button"
+          className="absolute right-4 md:right-[24px] md:top-[24px]"
           onClick={closeHandler}
         >
-          <AppIcon type='close' className='text-brown max-md:w-6 max-md:h-6' />
+          <AppIcon type="close" className="text-white max-md:w-6 max-md:h-6" />
         </button>
       )}
 
@@ -69,14 +69,14 @@ export const AppModal: React.FC<PropsWithChildren<Props>> = ({
   isOpen = false,
   className,
   contentClassName,
-  children
+  children,
 }) => {
   if (!isOpen) return null;
 
   return createPortal(
     <div
       className={clsx(
-        "fixed z-50 inset-x-0 inset-y-0 w-full h-full p-4 bg-[rgba(0,0,0,0.5)] overflow-y-auto no-scrollbar",
+        "fixed z-50 inset-x-0 inset-y-0 w-full h-full bg-white/30 overflow-y-auto no-scrollbar",
         className
       )}
     >

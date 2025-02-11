@@ -28,6 +28,10 @@ const config: Config = {
         "text-gray": "#B5B5B5",
         brown: "rgba(18, 13, 13, 1)",
         bbg: "rgba(79, 73, 69)",
+        "active-link": "#6A6A6A",
+      },
+      boxShadow: {
+        button: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
       },
     },
   },

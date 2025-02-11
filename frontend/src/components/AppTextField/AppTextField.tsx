@@ -1,6 +1,11 @@
-import React, { InputHTMLAttributes, ReactNode, TextareaHTMLAttributes } from "react";
+import React, {
+  InputHTMLAttributes,
+  ReactNode,
+  TextareaHTMLAttributes,
+} from "react";
 import { clsx } from "clsx";
 import { omit } from "rambda";
+import { manrop } from "@/pages";
 
 type CommonProps = {
   label?: string;
@@ -34,11 +39,12 @@ export const AppTextField: React.FC<AppTextFieldProps> = ({
   ...props
 }) => {
   const commonClassNames = clsx(
-    "w-full px-8 text-[18px] md:text-[24px] bg-bbg rounded-[80px] text-white placeholder:text-[rgba(154,149,146)]",
-    "hover:border-gray-2 focus:border-primary disabled:bg-gray-5 disabled:border-gray-4 disabled:text-gray",
+    "w-full px-4 text-[18px] md:text-[16px] bg-black border rounded-[5px] text-white opacity-50 placeholder:text-white",
+    "hover:border-gray-2 focus:border-gray-500 disabled:bg-gray-5 disabled:border-gray-4 disabled:text-gray",
+    `${manrop.className}`,
     {
       "pt-5 md:pt-6": label,
-      "!border-danger": !props.disabled && error
+      "!border-danger": !props.disabled && error,
     },
     inputClassName
   );
@@ -47,15 +53,18 @@ export const AppTextField: React.FC<AppTextFieldProps> = ({
     <label className={clsx("block relative", className)}>
       {label && (
         <span
-          className={clsx("absolute text-white left-[17px] top-2 md:top-3 block text-xs", {
-            "pt-2 md:pt-3 pl-4 pb-2 !left-[1px] !top-[1px] right-2 md:right-5 bg-white rounded-3":
-              props.tag === "textarea",
-            "!bg-gray-5": props.tag === "textarea" && props.disabled,
-            "text-red-500": error
-          })}
+          className={clsx(
+            "absolute text-white left-[17px] top-2 md:top-3 block text-xs",
+            {
+              "pt-2 md:pt-3 pl-4 pb-2 !left-[1px] !top-[1px] right-2 md:right-5 bg-white rounded-3":
+                props.tag === "textarea",
+              "!bg-gray-5": props.tag === "textarea" && props.disabled,
+              "text-red-500": error,
+            }
+          )}
         >
           {label}
-          {required && <span className='!text-danger'>{" *"}</span>}
+          {required && <span className="!text-danger">{" *"}</span>}
         </span>
       )}
       {props.tag === "input" ? (
@@ -65,7 +74,7 @@ export const AppTextField: React.FC<AppTextFieldProps> = ({
             {...omit("tag", props)}
             className={clsx(
               "md:h-[42px] h-[42px] outline-none",
-              { "md:h-[54px] ": !label },
+              { "md:h-[62px] ": !label },
               commonClassNames
             )}
           />
@@ -75,14 +84,14 @@ export const AppTextField: React.FC<AppTextFieldProps> = ({
                 "absolute top-[18px] md:top-[24px] right-[16px] text-primary hover:cursor-pointer",
                 {
                   "!text-gray hover:cursor-auto": props.disabled,
-                  "!text-red-500": !props.disabled && error
+                  "!text-red-500": !props.disabled && error,
                 }
               )}
             >
               {suffix}
             </div>
           )}
-          {error && <div className='text-red-500 mt-1'>{error}</div>}
+          {error && <div className="text-red-500 mt-1">{error}</div>}
         </>
       ) : (
         <>
@@ -95,7 +104,7 @@ export const AppTextField: React.FC<AppTextFieldProps> = ({
               commonClassNames
             )}
           />
-          {error && <div className='text-red-500'>{error}</div>}
+          {error && <div className="text-red-500">{error}</div>}
         </>
       )}
     </label>

@@ -59,10 +59,14 @@ export const Header: React.FC = () => {
         <div className="text-white max-md:hidden text-[20px] lg:px-8 px-2 py-2">
           <ul className="flex gap-[55px] max-lg:text-sm items-center">
             <li>
-              <Link href={"/"}>Главная</Link>
+              <Link className="hover:text-active-link" href={"/"}>
+                Главная
+              </Link>
             </li>
             <li>
-              <Link href={"/programs"}>Программы</Link>
+              <Link className="hover:text-active-link" href={"/programs"}>
+                Программы
+              </Link>
             </li>
             <li>
               <Link href="/" className="relative block shrink-0">
@@ -75,10 +79,14 @@ export const Header: React.FC = () => {
               </Link>
             </li>
             <li>
-              <Link href={"/masters"}>Мастера</Link>
+              <Link className="hover:text-active-link" href={"/masters"}>
+                Мастера
+              </Link>
             </li>
             <li>
-              <Link href={"/vacancies"}>Вакансии</Link>
+              <Link className="hover:text-active-link" href={"/vacancies"}>
+                Вакансии
+              </Link>
             </li>
           </ul>
         </div>
@@ -86,12 +94,13 @@ export const Header: React.FC = () => {
           <ul className="flex gap-[28px] items-center">
             <li className="max-md:hidden">
               <Link
-                className="header-link relative"
+                className="header-link relative "
                 href="https://t.me/chocolate_spa"
               >
                 <Image
                   src={"/images/telegram.svg"}
                   alt=""
+                  className="hover:opacity-50"
                   width={40}
                   height={40}
                 />
@@ -105,6 +114,7 @@ export const Header: React.FC = () => {
                 <Image
                   src={"/images/whatsapp.svg"}
                   alt=""
+                  className="hover:opacity-50"
                   width={40}
                   height={40}
                 />
@@ -112,7 +122,13 @@ export const Header: React.FC = () => {
             </li>
             <li className="max-md:hidden">
               <Link className="header-link relative" href={`tel:+79220058113`}>
-                <Image src={"/images/call.svg"} alt="" width={40} height={40} />
+                <Image
+                  src={"/images/call.svg"}
+                  alt=""
+                  width={40}
+                  height={40}
+                  className="hover:opacity-50"
+                />
               </Link>
             </li>
             <li className={`self-center ml-4 md:hidden`}>

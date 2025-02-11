@@ -1,4 +1,4 @@
-import { Montserrat } from "next/font/google";
+import { Manrope, Montserrat, Tenor_Sans } from "next/font/google";
 import { AppHead } from "@/components/AppHead/AppHead";
 import { Header } from "@/components/Header/Header";
 import { Author } from "@/components/Author/Author";
@@ -16,6 +16,16 @@ import { Call } from "@/components/Call/Call";
 export const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["400", "700"], // Настраиваешь веса, которые тебе нужны
+});
+
+export const tenor = Tenor_Sans({
+  subsets: ["latin"],
+  weight: ["400"], // Настраиваешь веса, которые тебе нужны
+});
+
+export const manrop = Manrope({
+  subsets: ["latin"],
+  weight: ["400"], // Настраиваешь веса, которые тебе нужны
 });
 
 export const MetaData = {
