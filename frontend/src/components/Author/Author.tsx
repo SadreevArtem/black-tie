@@ -29,9 +29,9 @@ export const Author: FC<BannerProps> = ({ images }) => {
               quality={100}
             />
           </div>
-          <div className="text-white absolute md:bottom-[54px] bottom-[84px] left-1/2 transform -translate-x-1/2 md:text-[24px] text-[15px]">
+          <div className="text-white absolute md:bottom-[84px] bottom-[84px] left-1/2 transform -translate-x-1/2 xl:text-[24px] text-[20px]">
             <button
-              className="shadow-button mt-12 bg-white/20 hover:border p-6 md:px-[100px] px-12 max-md:text-[14px] rounded-[5px]  transition"
+              className="shadow-button mt-12 bg-white/20 hover:border xl:p-6 p-4 xl:px-[100px] px-[86px] max-md:text-[14px] rounded-[5px]  transition"
               onClick={handleOpen}
             >
               Записаться онлайн

@@ -19,7 +19,7 @@ const config: Config = {
         sm: "320px",
         md: "768px",
         lg: "1280px",
-        xl: "1440px",
+        xl: "1920px",
       },
       colors: {
         primary: "#DABB74",

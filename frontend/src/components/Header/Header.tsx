@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { HEADER_MENU } from "../Hamburger/static";
 import { Hamburger } from "../Hamburger";
 import Image from "next/image";
@@ -50,13 +49,13 @@ export const Header: React.FC = () => {
               height={40}
             />
           </div>
-          <div className="text-[20px]">
+          <div className="xl:text-[20px] text-[15px]">
             <p className="text-white">г. Тюмень</p>
             <p className="text-white">ул. Гнаровской, д.6</p>
           </div>
         </div>
 
-        <div className="text-white max-md:hidden text-[20px] lg:px-8 px-2 py-2">
+        <div className="text-white max-md:hidden xl:text-[20px] lg:px-8 px-2 py-2">
           <ul className="flex gap-[55px] max-lg:text-sm items-center">
             <li>
               <Link className="hover:text-active-link" href={"/"}>
@@ -72,6 +71,7 @@ export const Header: React.FC = () => {
               <Link href="/" className="relative block shrink-0">
                 <Image
                   src={"/images/logo.svg"}
+                  className="md:h-[74px]"
                   alt="logo"
                   width={100}
                   height={100}
@@ -101,8 +101,8 @@ export const Header: React.FC = () => {
                   src={"/images/telegram.svg"}
                   alt=""
                   className="hover:opacity-50"
-                  width={40}
-                  height={40}
+                  width={30}
+                  height={30}
                 />
               </Link>
             </li>
@@ -115,8 +115,8 @@ export const Header: React.FC = () => {
                   src={"/images/whatsapp.svg"}
                   alt=""
                   className="hover:opacity-50"
-                  width={40}
-                  height={40}
+                  width={30}
+                  height={30}
                 />
               </Link>
             </li>
@@ -125,8 +125,8 @@ export const Header: React.FC = () => {
                 <Image
                   src={"/images/call.svg"}
                   alt=""
-                  width={40}
-                  height={40}
+                  width={30}
+                  height={30}
                   className="hover:opacity-50"
                 />
               </Link>

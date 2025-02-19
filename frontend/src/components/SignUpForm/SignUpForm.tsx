@@ -40,7 +40,7 @@ export const SignUpForm: FC<Props> = ({ handleClose }) => {
       onSubmit={handleSubmit(onSubmit)}
       className={`"py-4 flex flex-col md:gap-4 gap-3 " ${tenor.className}`}
     >
-      <h4 className="text-white md:text-[32px] text-xl text-center md:mb-[60px]">
+      <h4 className="text-white md:text-[32px] text-center md:mb-[30px]">
         Обратная связь
       </h4>
       <Controller
@@ -85,12 +85,15 @@ export const SignUpForm: FC<Props> = ({ handleClose }) => {
         type="submit"
         value="Записаться онлайн"
         className={clsx(
-          "bg-white/20 border md:h-[76px] border-black hover:border-white my-4 p-2 px-12 md:text-[24px] text-[18px] rounded-[5px] transition text-white self-center cursor-pointer w-full",
+          "bg-white/20 border md:h-[76px] border-black hover:border-white my-4 px-12 md:text-[20px] text-[18px] rounded-[5px] transition text-white self-center cursor-pointer w-full",
           `${montserrat.className}`
         )}
       />
       <span
-        className={clsx("text-center text-white", `${montserrat.className}`)}
+        className={clsx(
+          "text-center text-white text-[14px]",
+          `${montserrat.className}`
+        )}
       >
         Нажимая на кнопку, вы даете согласие на обработку персональных данных и
         соглашаетесь с Политикой конфиденциальности

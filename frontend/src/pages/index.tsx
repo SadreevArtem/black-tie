@@ -51,7 +51,7 @@ const Home = () => {
 
         {/* <InfoBlock /> */}
         <ServicesBlock />
-        <MastersBlock items={reviews} />
+        <MastersBlock />
         <ProgramsBlock />
         <div className="md:mt-[60px] mt-4">
           <TelegrammBlock />

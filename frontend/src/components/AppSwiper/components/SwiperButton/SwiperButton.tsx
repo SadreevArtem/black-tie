@@ -1,4 +1,3 @@
-
 import { AppIcon } from "@/components/AppIcon";
 import clsx from "clsx";
 import React, { MouseEvent, forwardRef } from "react";
@@ -15,14 +14,20 @@ export const SwiperButton = forwardRef<HTMLButtonElement, Props>(
       <button
         ref={ref}
         className={clsx(
-          "w-12 h-12 flex items-center justify-center",
-          "rounded-full  shadow-base text-white hover:opacity-70 border border-white",
+          "w-16 h-16 flex items-center justify-center",
+          "rounded-full  shadow-base text-white hover:opacity-70",
           className
         )}
         onClick={onClick}
         {...props}
       >
-        <AppIcon type='chevron-right' className={clsx({ "rotate-180": type === "prev" })} />
+        <AppIcon
+          type="chevron-right"
+          className={clsx(
+            { "rotate-180": type === "prev" },
+            "md:h-8 w-8 text-text-gray"
+          )}
+        />
       </button>
     );
   }

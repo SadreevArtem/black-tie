@@ -31,16 +31,16 @@ export const ServicesCard: React.FC<Props> = ({
             imagePosition === "right" ? "pl-[70px]" : "pr-[70px]"
           }`}
         >
-          <h2 className="text-[28px] font-bold uppercase">{name}</h2>
+          <h2 className="text-[24px] font-bold uppercase">{name}</h2>
           <div
-            className="md:text-[28px] text-[18px] "
+            className="md:text-[24px] text-[18px] "
             dangerouslySetInnerHTML={{ __html: description }}
           ></div>
         </div>
 
         {/* Изображение */}
         <div
-          className={`relative w-[40%] ${
+          className={`relative w-[60%] ${
             imagePosition === "right" ? "order-last" : "order-first"
           }`}
         >

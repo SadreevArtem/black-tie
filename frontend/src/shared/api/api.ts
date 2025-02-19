@@ -198,6 +198,6 @@ class API {
   };
 }
 
-// export const api = new API('https://api.spa-chocolate.ru')
+export const api = new API("https://api.spa-chocolate.ru");
 
-export const api = new API("http://localhost:3000");
+// export const api = new API("http://localhost:3000");
