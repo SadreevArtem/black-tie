@@ -17,7 +17,7 @@ export const Button: React.FC<Props> = ({
     <button
       onClick={onButtonClick}
       className={clsx(
-        "bg-bg-opacity font-bold my-6 p-2 px-12 md:text-[24px] text-[18px] rounded-[80px] hover:bg-black transition text-white !hover:text-primary self-center",
+        "shadow-button font-normal mt-12 text-white bg-white/20 border hover:border-white border-transparent xl:p-6 p-4 xl:px-[100px] px-[86px] max-md:text-[14px] rounded-[5px] xl:text-[24px] text-[24px]  transition",
         className
       )}
     >

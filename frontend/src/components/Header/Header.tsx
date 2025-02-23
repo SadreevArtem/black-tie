@@ -37,7 +37,7 @@ export const Header: React.FC = () => {
 
   return (
     <header
-      className={`md:p-5 p-4 fixed top-0 z-10 bg-transparent w-full transition-colors duration-500 delay-300  ${montserrat.className}`}
+      className={`z-30 md:p-5 p-4 fixed top-0 bg-transparent w-full transition-colors duration-500 delay-300  ${montserrat.className}`}
     >
       <div className={"container flex items-center justify-between min-h-6"}>
         <div className="flex items-center gap-[10px] max-lg:hidden">

@@ -1,32 +1,59 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react'
+import Image from "next/image";
+import clsx from "clsx";
+import React from "react";
+import { montserrat } from "@/pages";
+import Link from "next/link";
 
 export const TelegrammBlock = () => {
   return (
-    <div className="container text-white flex flex-col items-center gap-4">
-      <h2 className="text-lg md:text-xl text-white lg:text-2xl font-extrabold text-center">
-        Приватный TELEGRAM для VIP гостей
-      </h2>
-      <div className="mt-4">
-        <Link
-          href={"https://t.me/Cchocolate_tmn"}
-          className="flex items-center border border-white rounded-[80px] pr-6"
-        >
-          <Image src={"/images/tg.svg"} alt="" width={65} height={100} />
-          <p className="uppercase">подпишись в телеграмм</p>
-        </Link>
-      </div>
-      <div className="relative">
-        <Image
-          src={"/images/000.png"}
-          className="md:h-[600px] w-auto"
-          alt="спа-шоколад"
-          width={1776}
-          quality={100}
-          height={1376}
-        />
+    <div className="container">
+      <div className="relative  text-white rounded-[10px] border overflow-hidden flex items-center">
+        {/* Градиентный фон */}
+        <div className="absolute z-10 inset-0 bg-gradient-to-r from-black via-black/70 to-white/60" />
+
+        {/* Текстовая часть */}
+        <div className="relative w-[60%] pl-[70px] z-20">
+          <div
+            className={clsx(
+              "md:text-[24px]  font-semibold text-[18px]",
+              montserrat.className
+            )}
+            dangerouslySetInnerHTML={{
+              __html:
+                "Подпишись на приватный TELEGRAM и получи карту VIP - гостя ",
+            }}
+          ></div>
+        </div>
+
+        {/* Изображение */}
+        <div className="relative w-[60%] order-last h-[200px]">
+          <Image
+            src={"/images/tg2.jpg"}
+            alt="Car image"
+            layout="fill"
+            objectFit="cover"
+            className="!relative"
+          />
+          <div className="z-20 absolute bottom-5 left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2">
+            <div className="flex flex-col items-center gap-1">
+              <p className="text-black font-black text-[32px]">КУПОН НА 10%</p>
+              <Link
+                href={"/"}
+                className="flex gap-3 px-6 py-2 bg-transparent text-black border border-black rounded-[10px] transition"
+              >
+                <Image
+                  src={"/images/tg-icon.png"}
+                  alt="Car image"
+                  width={18}
+                  height={18}
+                  className="!relative w-6"
+                />
+                <p>перейти</p>
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
-}
+};

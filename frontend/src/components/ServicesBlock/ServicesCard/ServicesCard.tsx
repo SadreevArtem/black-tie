@@ -27,7 +27,7 @@ export const ServicesCard: React.FC<Props> = ({
 
         {/* Текстовая часть */}
         <div
-          className={`relative z-10 w-[60%] ${
+          className={`relative w-[60%] ${
             imagePosition === "right" ? "pl-[70px]" : "pr-[70px]"
           }`}
         >
