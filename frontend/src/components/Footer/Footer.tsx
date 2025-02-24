@@ -5,20 +5,31 @@ import { SignUpForm } from "../SignUpForm/SignUpForm";
 import { useModal } from "@/hooks/useModal";
 import Image from "next/image";
 
-
-
 export const Footer: React.FC = () => {
   const { open, handleOpen, handleClose } = useModal();
 
   return (
     <>
-      <footer className={`w-full flex flex-col py-4 md:mt-[60px] mt-4`}>
-        <div className="container grid md:grid-cols-4 md:gap-8 gap-4 max-md:hidden">
+      <footer
+        className={`container w-full flex flex-col py-4 md:mt-[60px] my-4 mb-8 border-t-white border-t`}
+      >
+        <div className="container grid md:grid-cols-4 md:gap-8 gap-4 max-md:hidden mt-4">
+          <div>
+            <Link href="/" className="relative block shrink-0">
+              <Image
+                src={"/images/logo_footer.png"}
+                className=""
+                alt="logo"
+                width={100}
+                height={100}
+              />
+            </Link>
+          </div>
           <div className="flex flex-col gap-2 items-start">
             <div className="relative flex flex-col md:flex-row gap-4 items-center">
               <Link href="/" className="relative block shrink-0">
                 <div className="flex flex-col items-center">
-                  <span className="text-2xl text-white font-extrabold md:mb-4">
+                  <span className="uppercase text-2xl text-white font-extrabold md:mb-4">
                     гость
                   </span>
                 </div>
@@ -29,18 +40,20 @@ export const Footer: React.FC = () => {
                 href={"/masters"}
                 className="text-white w-fit hover:text-hover"
               >
-                мастера
+                Мастера
               </Link>
               <Link
                 href={"/programs"}
                 className="text-white w-fit hover:text-hover"
               >
-                программы
+                Программы
               </Link>
             </div>
           </div>
           <div className="text-white flex flex-col gap-2">
-            <h5 className="font-extrabold text-2xl  md:mb-4">платформы</h5>
+            <h5 className="uppercase font-extrabold text-2xl  md:mb-4">
+              платформы
+            </h5>
             <Link
               href={"https://t.me/Cchocolate_tmn"}
               className="text-white w-fit hover:text-hover"
@@ -55,7 +68,7 @@ export const Footer: React.FC = () => {
             </Link>
           </div>
           <div className="text-white flex flex-col gap-2">
-            <h5 className="font-extrabold text-2xl  md:mb-4">
+            <h5 className="uppercase font-extrabold text-2xl  md:mb-4">
               связаться с нами:
             </h5>
             <Link
@@ -65,13 +78,13 @@ export const Footer: React.FC = () => {
               +7 (922) 005-81-13
             </Link>
           </div>
-          <div className="text-white flex flex-col gap-2">
+          {/* <div className="text-white flex flex-col gap-2">
             <h5 className="font-extrabold text-2xl  md:mb-4">
               мы находимся по адресу:
             </h5>
             <p className="text-white">город Тюмень</p>
             <p className="text-white">Солнечный проезд 22</p>
-          </div>
+          </div> */}
         </div>
         <div className="md:hidden flex flex-col items-center">
           <button
@@ -118,9 +131,15 @@ export const Footer: React.FC = () => {
             />
             <div className="absolute top-0 bottom-0 left-0 right-0 flex flex-col items-start justify-between px-10 gap-6">
               <div className="self-center mt-3">
-                <span className="my-6 block text-center rounded-[80px] bg-bg-opacity text-white px-16 py-4 uppercase">Контакты салона</span>
-                <p className="text-white text-center block my-2">город Тюмень,</p>
-                <p className="text-white text-center my-2">Солнечный проезд 22</p>
+                <span className="my-6 block text-center rounded-[80px] bg-bg-opacity text-white px-16 py-4 uppercase">
+                  Контакты салона
+                </span>
+                <p className="text-white text-center block my-2">
+                  город Тюмень,
+                </p>
+                <p className="text-white text-center my-2">
+                  Солнечный проезд 22
+                </p>
                 <Link
                   href={`tel:+79220058113`}
                   className="text-white hover:text-hover block text-center"

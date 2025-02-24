@@ -2,10 +2,11 @@ import React, { ReactElement } from "react";
 import { BaseLayout } from "../../../layouts/BaseLayout/BaseLayout";
 import { AppHead } from "@/components/AppHead/AppHead";
 import { Header } from "@/components/Header/Header";
-import { montserrat } from "..";
+import { montserrat, tenor } from "..";
 import { ProgramsList } from "@/components/ProgramsList/ProgramsList";
 import { Footer } from "@/components/Footer/Footer";
 import { Call } from "@/components/Call/Call";
+import clsx from "clsx";
 
 const Programs = () => {
   return (
@@ -21,7 +22,12 @@ const Programs = () => {
         <h1 className="text-[1px] opacity-5">
           массажный салон секс erotic massage
         </h1>
-        <h2 className="text-[32px] text-white lg:text-[64px] font-normal md:mt-12 mt-8">
+        <h2
+          className={clsx(
+            "text-[32px] text-white lg:text-[64px] font-normal md:mt-12 mt-8",
+            tenor.className
+          )}
+        >
           Виды услуг
         </h2>
         <p className="text-white lg:text-[24px] mt-8">

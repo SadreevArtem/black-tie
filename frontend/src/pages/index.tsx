@@ -15,7 +15,7 @@ import { Call } from "@/components/Call/Call";
 
 export const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["400", "700"], // Настраиваешь веса, которые тебе нужны
+  weight: ["300", "400", "500", "700"], // Настраиваешь веса, которые тебе нужны
 });
 
 export const tenor = Tenor_Sans({
