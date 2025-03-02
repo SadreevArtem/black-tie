@@ -90,8 +90,8 @@ export const Header: React.FC = () => {
             </li>
           </ul>
         </div>
-        <nav className="flex items-center gap-4">
-          <ul className="flex gap-[28px] items-center">
+        <nav className="flex items-center gap-4 max-md:w-full">
+          <ul className="flex gap-[28px] items-center max-md:justify-between max-md:w-full">
             <li className="max-md:hidden">
               <Link
                 className="header-link relative "
@@ -131,6 +131,36 @@ export const Header: React.FC = () => {
                 />
               </Link>
             </li>
+            {!hamburgerActive ? (
+              <li className="md:hidden">
+                <Link href="/" className="relative block shrink-0">
+                  <Image
+                    src={"/images/logo.svg"}
+                    className="md:h-[44px]"
+                    alt="logo"
+                    width={43}
+                    height={64}
+                  />
+                </Link>
+              </li>
+            ) : (
+              <li className="">
+                <div className="flex items-center gap-[10px] ">
+                  <div className="flex gap-4">
+                    <Image
+                      src={"/images/location.svg"}
+                      alt="log"
+                      width={40}
+                      height={40}
+                    />
+                  </div>
+                  <div className="xl:text-[20px] text-[16px]">
+                    <p className="text-white">г. Тюмень</p>
+                    <p className="text-white">ул. Гнаровской, д.6</p>
+                  </div>
+                </div>
+              </li>
+            )}
             <li className={`self-center ml-4 md:hidden`}>
               <Hamburger
                 className="md:hidden"

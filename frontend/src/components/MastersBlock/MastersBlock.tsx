@@ -46,7 +46,7 @@ export const MastersBlock: React.FC<Props> = ({
       <div className="container flex items-center md:justify-between mb-6 md:mb-8">
         <h2
           className={clsx(
-            "self-center md:text-[40px] text-white  max-md:ml-auto mr-auto font-normal",
+            "self-center md:text-[40px] text-[24px] text-white mr-auto font-normal",
             tenor.className
           )}
         >

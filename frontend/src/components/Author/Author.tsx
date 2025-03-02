@@ -23,15 +23,15 @@ export const Author: FC<BannerProps> = ({ images }) => {
             <Image
               src={"/images/massage.jpg"}
               alt="logo"
-              className="w-full md:h-full h-[60vh] object-cover object-right right-0 top-[130px] max-md:absolute"
+              className="md:w-full md:h-full h-[60vh] object-cover object-right right-0 md:top-[130px] top-[130px] max-md:absolute"
               width={1920}
               height={1212}
               quality={100}
             />
           </div>
-          <div className="text-white absolute md:bottom-[84px] bottom-[84px] left-1/2 transform -translate-x-1/2 xl:text-[24px] text-[20px]">
+          <div className="text-white absolute md:bottom-[84px] bottom-[94px] left-1/2 transform -translate-x-1/2 xl:text-[24px] text-[20px] max-md:w-[calc(100%-32px)]">
             <button
-              className="shadow-button mt-12 bg-white/20 border border-transparent hover:border-white xl:p-6 p-4 xl:px-[100px] px-[86px] max-md:text-[14px] rounded-[5px]  transition"
+              className="shadow-button mt-12 bg-white/20 border border-transparent hover:border-white xl:p-6 p-4 xl:px-[100px] px-[86px] max-md:text-[14px] rounded-[5px] transition w-full"
               onClick={handleOpen}
             >
               Записаться онлайн

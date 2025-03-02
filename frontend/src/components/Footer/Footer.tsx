@@ -13,8 +13,8 @@ export const Footer: React.FC = () => {
       <footer
         className={`container w-full flex flex-col py-4 md:mt-[60px] my-4 mb-8 border-t-white border-t`}
       >
-        <div className="container grid md:grid-cols-4 md:gap-8 gap-4 max-md:hidden mt-4">
-          <div>
+        <div className="container md:grid md:grid-cols-4 flex flex-wrap  md:gap-8 gap-4 mt-4">
+          <div className="max-md:w-full">
             <Link href="/" className="relative block shrink-0">
               <Image
                 src={"/images/logo_footer.png"}
@@ -25,7 +25,7 @@ export const Footer: React.FC = () => {
               />
             </Link>
           </div>
-          <div className="flex flex-col gap-2 items-start">
+          <div className="flex flex-col gap-2 items-start max-md:w-[40%]">
             <div className="relative flex flex-col md:flex-row gap-4 items-center">
               <Link href="/" className="relative block shrink-0">
                 <div className="flex flex-col items-center">
@@ -86,7 +86,7 @@ export const Footer: React.FC = () => {
             <p className="text-white">Солнечный проезд 22</p>
           </div> */}
         </div>
-        <div className="md:hidden flex flex-col items-center">
+        {/* <div className="md:hidden flex flex-col items-center">
           <button
             className="mt-6 bg-bg-opacity text-white px-16 py-4 max-md:text-[14px] rounded-[80px] hover:bg-black transition hover:text-primary"
             onClick={handleOpen}
@@ -175,7 +175,7 @@ export const Footer: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </footer>
       <AppModal isOpen={open} closeHandler={handleClose}>
         <SignUpForm handleClose={handleClose} />

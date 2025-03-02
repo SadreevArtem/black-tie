@@ -20,21 +20,21 @@ export const ProgramsList = () => {
         <article key={program.name.concat(i.toString())} className="w-full">
           <div
             className={clsx(
-              "relative w-[300px] h-[282px] md:w-[600px] md:h-[420px] overflow-hidden",
+              "relative  h-[217px] md:w-[600px] md:h-[420px] overflow-hidden",
               "bg-[#323232] shadow-base rounded-[15px] group grayscale"
             )}
             onClick={() => console.log("click")}
             aria-hidden
           >
             <div className="flex flex-col items-center gap-3 mb-3 md:mb-6">
-              <div className="relative w-[300px] h-[282px]  md:w-[600px] md:h-[420px] shrink-0 rounded-[15px]">
+              <div className="relative w-full h-[217px]  md:w-[600px] md:h-[420px] shrink-0 rounded-[15px]">
                 <Image
                   src={program.image || "/images/empty.png"}
                   alt={program.name || "Аватар"}
                   fill
                   className="w-full h-full rounded-[20px] object-cover"
                 />
-                <div className="absolute p-[30px] py-[20px] top-0 bottom-0 left-0 right-0 text-white md:text-lg flex flex-col items-start justify-between">
+                <div className="absolute p-[10px] md:p-[30px] md:py-[20px] top-0 bottom-0 left-0 right-0 text-white md:text-lg flex flex-col items-start justify-between">
                   <div className="flex flex-col gap-[10px]">
                     <div className="md:text-[32px] text-[24px] font-bold">
                       {program.name}
@@ -50,7 +50,7 @@ export const ProgramsList = () => {
                   >
                     <Button
                       title="подробнее"
-                      className="bg-transparent opacity-50 font-normal !my-0 !rounded-[5px] py-4 w-full border text-[20px]"
+                      className="!bg-transparent opacity-50 font-normal !my-0 !rounded-[5px] py-4 w-full border border-white text-[20px]"
                     />
                   </Link>
                 </div>

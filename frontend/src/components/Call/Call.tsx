@@ -1,26 +1,17 @@
-import Image from 'next/image'
-import Link from 'next/link';
-import React from 'react'
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 
 export const Call = () => {
   return (
-    <div className="fixed top-[50%] -translate-y-1/2 md:right-[40px] right-[10px] z-10 bg-[#7F6B6B]/50 p-4 py-8 flex flex-col gap-4 rounded-[40px]">
-      <Link href={`tel:+79220058113`}>
-        <Image
-          className="w-10"
-          src={"/images/phone-call.svg"}
-          alt=""
-          width={65}
-          height={65}
-        />
-      </Link>
+    <div className="fixed top-[50%] -translate-y-1/2 md:right-[40px] right-0 z-10 bg-[#0E0D0D]/50 p-4 flex flex-col gap-4 rounded-l-[15px]">
       <Link
         href={"https://t.me/chocolate_spa"}
         className="flex items-center gap-2"
       >
         <Image
-          className="w-10"
-          src={"/images/telegram-black.svg"}
+          className="w-8"
+          src={"/images/telegram.svg"}
           alt=""
           width={65}
           height={65}
@@ -31,8 +22,17 @@ export const Call = () => {
         className="flex items-center gap-2"
       >
         <Image
-          className="w-10"
-          src={"/images/whatsapp-black.svg"}
+          className="w-8"
+          src={"/images/whatsapp.svg"}
+          alt=""
+          width={65}
+          height={65}
+        />
+      </Link>
+      <Link href={`tel:+79220058113`}>
+        <Image
+          className="w-8"
+          src={"/images/call.svg"}
           alt=""
           width={65}
           height={65}
@@ -40,4 +40,4 @@ export const Call = () => {
       </Link>
     </div>
   );
-}
+};

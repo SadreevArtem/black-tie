@@ -8,7 +8,7 @@ export const AboutBlock: FC = () => {
       {/* <h1 className="opacity-10 text-[1px]">Салон Эротического массажа в Тюмени для мужчин</h1> */}
       <h2
         className={clsx(
-          "self-center md:text-[40px] text-white  max-md:ml-auto mr-auto font-normal",
+          "self-center md:text-[40px] text-[24px] text-white mr-auto font-normal",
           tenor.className
         )}
       >
@@ -21,7 +21,7 @@ export const AboutBlock: FC = () => {
           интимных услуг.
         </p>
       </div>
-      <div className={clsx("grid grid-cols-12 gap-4", montserrat.className)}>
+      <div className={clsx("md:grid grid-cols-12 gap-4", montserrat.className)}>
         <div className="col-span-5 grid-rows-6 grid gap-4">
           <div className="border border-white p-6 rounded-[10px] row-span-4 flex flex-col justify-around">
             <div>
@@ -43,8 +43,10 @@ export const AboutBlock: FC = () => {
               </p>
             </div>
           </div>
-          <div className="bg-[#d9d9d9] rounded-[10px] p-6 text-black row-span-2">
-            <h3 className={clsx("font-bold uppercase text-[18px] mt-[70px]")}>
+          <div className="bg-[#d9d9d9] rounded-[10px] p-6 text-black row-span-2 max-md:mb-4">
+            <h3
+              className={clsx("font-bold uppercase text-[18px] md:mt-[70px]")}
+            >
               Акции и подарки
             </h3>
             <p className="mt-4 text-[14px]">
@@ -53,7 +55,7 @@ export const AboutBlock: FC = () => {
             </p>
           </div>
         </div>
-        <div className="col-span-7 grid-rows-6 grid gap-4">
+        <div className="col-span-7 grid-rows-6 md:grid gap-4 flex flex-col">
           <div className="relative overflow-hidden bg-[#d9d9d9]/50 text-black p-6 rounded-[10px] row-span-3 flex flex-col justify-end">
             <h3 className={clsx("font-bold uppercase text-[18px]")}>
               Конфиденциальность
@@ -64,8 +66,8 @@ export const AboutBlock: FC = () => {
             </p>
             <div className="absolute w-[240px] h-[240px] -top-[100px] right-[110px] blur-[70px] bg-white rounded-full -z-10"></div>
           </div>
-          <div className="flex gap-4 row-span-3">
-            <div className="border border-white p-6 w-[90%] rounded-[10px] flex flex-col justify-end">
+          <div className="flex max-md:flex-col gap-4 row-span-3">
+            <div className="border border-white p-6 md:w-[90%] rounded-[10px] flex flex-col justify-end">
               <h3 className={clsx("font-bold uppercase text-[18px]")}>Время</h3>
               <p className="mt-4 text-[14px]">
                 Внимательно относимся к вашему времени, каждая программа может

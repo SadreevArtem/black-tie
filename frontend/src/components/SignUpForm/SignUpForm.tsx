@@ -85,7 +85,7 @@ export const SignUpForm: FC<Props> = ({ handleClose }) => {
         type="submit"
         value="Записаться онлайн"
         className={clsx(
-          "bg-white/20 border md:h-[76px] border-black hover:border-white my-4 px-12 md:text-[20px] text-[18px] rounded-[5px] transition text-white self-center cursor-pointer w-full",
+          "bg-white/20 border md:h-[76px] max-md:py-4 border-black hover:border-white my-4 px-12 md:text-[20px] text-[18px] rounded-[5px] transition text-white self-center cursor-pointer w-full",
           `${montserrat.className}`
         )}
       />
