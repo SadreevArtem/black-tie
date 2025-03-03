@@ -25,11 +25,11 @@ export const Footer: React.FC = () => {
               />
             </Link>
           </div>
-          <div className="flex flex-col gap-2 items-start max-md:w-[40%]">
+          <div className="flex flex-col gap-2 items-start max-md:w-[40%] ">
             <div className="relative flex flex-col md:flex-row gap-4 items-center">
               <Link href="/" className="relative block shrink-0">
                 <div className="flex flex-col items-center">
-                  <span className="uppercase text-2xl text-white font-extrabold md:mb-4">
+                  <span className="uppercase text-2xl text-white font-extrabold md:mb-4 max-md:text-[16px]">
                     гость
                   </span>
                 </div>
@@ -38,37 +38,37 @@ export const Footer: React.FC = () => {
             <div className="flex flex-col gap-2">
               <Link
                 href={"/masters"}
-                className="text-white w-fit hover:text-hover"
+                className="text-white w-fit hover:text-hover max-md:text-[15px]"
               >
                 Мастера
               </Link>
               <Link
                 href={"/programs"}
-                className="text-white w-fit hover:text-hover"
+                className="text-white w-fit hover:text-hover max-md:text-[15px]"
               >
                 Программы
               </Link>
             </div>
           </div>
           <div className="text-white flex flex-col gap-2">
-            <h5 className="uppercase font-extrabold text-2xl  md:mb-4">
+            <h5 className="uppercase font-extrabold text-2xl  md:mb-4 max-md:text-[16px]">
               платформы
             </h5>
             <Link
               href={"https://t.me/Cchocolate_tmn"}
-              className="text-white w-fit hover:text-hover"
+              className="text-white w-fit hover:text-hover max-md:text-[15px]"
             >
               Telegramm
             </Link>
             <Link
               href={"https://wa.me/79220058113"}
-              className="text-white w-fit hover:text-hover"
+              className="text-white w-fit hover:text-hover max-md:text-[15px]"
             >
               WhatsApp
             </Link>
           </div>
           <div className="text-white flex flex-col gap-2">
-            <h5 className="uppercase font-extrabold text-2xl  md:mb-4">
+            <h5 className="uppercase font-extrabold text-2xl  md:mb-4 max-md:text-[16px]">
               связаться с нами:
             </h5>
             <Link

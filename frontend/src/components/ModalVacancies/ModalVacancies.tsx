@@ -13,7 +13,7 @@ export const ModalVacancies = () => {
       <div className={`container mt-[105px] flex flex-col items-center `}>
         <h1
           className={clsx(
-            "text-lg text-[40px] text-white lg:text-[40px] self-start font-normal md:mt-12 mt-8 ",
+            "text-[24px] text-white lg:text-[40px] self-start font-normal md:mt-12 mt-4 ",
             tenor.className
           )}
         >
@@ -21,7 +21,7 @@ export const ModalVacancies = () => {
         </h1>
         <p
           className={clsx(
-            "text-white text-center text-[16px] self-start md:mt-12 mt-8",
+            "text-white text-[16px] self-start md:mt-12 mt-4",
             montserrat.className
           )}
         >
@@ -30,7 +30,7 @@ export const ModalVacancies = () => {
         </p>
 
         <div className="text-white grid md:grid-cols-2 md:gap-16 gap-4 md:mt-12 mt-8 w-full">
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col md:gap-6 gap-1">
             <div
               className="flex flex-col gap-4 items-center justify-center aspect-video rounded-[5px]  bg-cover bg-center"
               style={{ backgroundImage: "url('/images/vacan1.png')" }}
@@ -47,7 +47,7 @@ export const ModalVacancies = () => {
               от 80 тысяч в месяц
             </p>
           </div>
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col md:gap-6 gap-1">
             <div
               className="flex flex-col gap-4 items-center justify-center aspect-video rounded-[5px]  bg-cover bg-center"
               style={{ backgroundImage: "url('/images/vacan2.png')" }}
@@ -67,16 +67,16 @@ export const ModalVacancies = () => {
         </div>
 
         <div className={clsx("self-start mt-8", montserrat.className)}>
-          <p className="text-white text-left text-[24px] ">
+          <p className="text-white text-left md:text-[24px] ">
             Работа исключительно в наших комфортабельных салонах.
           </p>
-          <p className="text-white font-bold text-left  text-lg mt-4">
+          <p className="text-white font-bold text-left  md:text-lg mt-4">
             Преимущества работы у нас:
           </p>
         </div>
         <ul
           className={clsx(
-            "text-white self-start mt-4 list-disc pl-4 flex flex-col gap-1 pb-8 text-[24px]",
+            "text-white self-start mt-4 list-disc pl-4 flex flex-col gap-1 pb-8 md:text-[24px]",
             montserrat.className
           )}
         >
@@ -88,7 +88,7 @@ export const ModalVacancies = () => {
         </ul>
         <Button
           onButtonClick={handleOpen}
-          className=""
+          className="w-full mt-4"
           title="Связаться с нами"
         ></Button>
       </div>

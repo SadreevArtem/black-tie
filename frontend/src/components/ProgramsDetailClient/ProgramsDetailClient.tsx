@@ -34,7 +34,7 @@ export const ProgramsDetailClient: FC<Props> = ({ id }) => {
     );
 
   return (
-    <div className="container w-full md:mt-24 mt-8 flex flex-col md:gap-24 gap-12">
+    <div className="w-full md:mt-24 mt-8 flex flex-col md:gap-24 gap-12">
       <article>
         <div className="flex md:gap-8 gap-4 max-md:flex-col">
           <div className="relative md:w-[50%] md:h-[360px] h-[220px] shrink-0">

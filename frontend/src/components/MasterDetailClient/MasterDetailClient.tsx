@@ -43,23 +43,31 @@ export const MastersDetailClient: FC<Props> = ({ id }) => {
       </Link>
     );
   return (
-    <div className="w-full mt-24 flex flex-col md:gap-24 gap-12">
+    <div className="w-full md:mt-24 flex flex-col md:gap-24 gap-12">
       <article
         key={master.name.concat(master.id.toString())}
         className="w-full"
       >
+        <h2
+          className={clsx(
+            "md:hidden text-white text-[24px] my-2 font-normal",
+            tenor.className
+          )}
+        >
+          {master.name}
+        </h2>
         <div className="flex md:gap-12 gap-4">
-          <div className="">
+          <div className="w-full">
             <Image
               style={{ objectFit: "cover" }}
               alt={master.name}
               src={master.avatar}
               width={300}
               height={300}
-              className=" rounded-[5px] md:w-[400px] md:h-[470px] w-[140px] h-[182px]"
+              className=" rounded-[5px] md:w-[400px] md:h-[470px] w-full h-[386px]"
             />
           </div>
-          <div className="flex flex-col gap-6 w-[60%]">
+          <div className="flex flex-col gap-6 w-[60%] max-md:hidden">
             <div className="flex justify-between max-lg:flex-col lg:flex-row">
               <h2
                 className={clsx(
@@ -96,39 +104,41 @@ export const MastersDetailClient: FC<Props> = ({ id }) => {
             ></Button>
           </div>
         </div>
-        <div className="text-text-gray flex gap-8 text-center justify-between md:hidden mt-4">
+        <div className="text-text-gray grid grid-cols-2 gap-4 justify-between md:hidden mt-4">
           <div>
-            <p>{`${master.age} лет`}</p>
-            <p>возраст</p>
+            <p className="font-light text-[14px]">Возраст</p>
+            <p className="text-[16px] font-medium">{`${master.age} лет`}</p>
           </div>
           <div>
-            <p>{`${master.height} см`}</p>
+            <p className="font-light text-[14px]">Вес</p>
+            <p className="text-[16px] font-medium">{`${master.weight} кг`}</p>
           </div>
           <div>
-            <p>{`${master.weight} кг`}</p>
+            <p className="font-light text-[14px]">Размер груди</p>
+            <p className="text-[16px] font-medium">{`${master.size}`}</p>
           </div>
           <div>
-            <p>{`${master.size}`}</p>
-            <p>размер</p>
+            <p className="font-light text-[14px]">Рост</p>
+            <p className="text-[16px] font-medium">{`${master.height} см`}</p>
           </div>
         </div>
         <div>
           <h3
             className={clsx(
-              "text-white text-[32px] font-normal md:mt-12 mt-8 max-md:hidden",
+              "text-white md:text-[32px] text-[20px] font-normal md:mt-12 mt-8 ",
               tenor.className
             )}
           >
             Фото мастера
           </h3>
-          <div className="lg:grid lg:grid-cols-3 md:mt-12 mt-4 flex flex-wrap gap-2 justify-start">
+          <div className="lg:grid lg:grid-cols-3 md:mt-12 mt-4 flex gap-2 justify-start overflow-auto">
             <Image
               style={{ objectFit: "cover" }}
               quality={100}
               onClick={() => handleImageClick(master.imageSecond)}
               src={master.imageSecond}
               alt={master.age.toString()}
-              className="rounded-lg md:w-[300px] md:h-[399px] w-[140px] h-[182px]"
+              className="rounded-lg md:w-[300px] md:h-[399px] w-[184px] h-[230px]"
               width={500}
               height={600}
             />
@@ -138,7 +148,7 @@ export const MastersDetailClient: FC<Props> = ({ id }) => {
               onClick={() => handleImageClick(master.imageThird)}
               src={master.imageThird}
               alt={master.age.toString()}
-              className=" rounded-lg md:w-[300px] md:h-[399px] w-[140px] h-[182px]"
+              className=" rounded-lg md:w-[300px] md:h-[399px] w-[184px] h-[230px]"
               width={500}
               height={600}
             />
@@ -148,11 +158,16 @@ export const MastersDetailClient: FC<Props> = ({ id }) => {
               onClick={() => handleImageClick(master.avatar)}
               src={master.avatar}
               alt={master.age.toString()}
-              className=" rounded-lg md:w-[300px] md:h-[399px] w-[140px] h-[182px]"
+              className=" rounded-lg md:w-[300px] md:h-[399px] w-[184px] h-[230px]"
               width={500}
               height={600}
             />
           </div>
+          <Button
+            onButtonClick={handleOpen}
+            className="bg-white w-full !m-0  font-normal md:hidden !my-8"
+            title="Записаться онлайн"
+          ></Button>
         </div>
       </article>
       <AppModal isOpen={open} closeHandler={handleClose}>
