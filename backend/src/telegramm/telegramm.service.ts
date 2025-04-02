@@ -36,7 +36,8 @@ export class TelegrammService {
   async sendMessage(chatId: number, message: string): Promise<void> {
     await this.bot.telegram.sendMessage(
       chatId,
-      `* Поступил запрос на звонок сайта *
+      `📞🔔 Поступил запрос на звонок сайта! 🚀
+      💼 Клиент уже ждёт... 👉🏻💦   🏎️
       ${message}`,
     );
   }
