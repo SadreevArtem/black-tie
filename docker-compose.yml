@@ -1,4 +1,4 @@
-version: '3.9'
+version: "3.9"
 
 services:
   backend:
@@ -27,7 +27,7 @@ services:
       - 8080:3000
     networks:
       - frontend
-  
+
   db:
     container_name: postgres
     image: postgres
@@ -37,14 +37,13 @@ services:
       - backend
     volumes:
       - postgres_data:/data/postgres
-  
 
   pgadmin:
     container_name: pgadmin
     image: dpage/pgadmin4
     environment:
-      PGADMIN_DEFAULT_EMAIL: admin@chokolate.com  # Замените на ваш email
-      PGADMIN_DEFAULT_PASSWORD: ChocolateBit           # Замените на ваш пароль
+      PGADMIN_DEFAULT_EMAIL: admin@black72.com # Замените на ваш email
+      PGADMIN_DEFAULT_PASSWORD: ChocolateBit@ # Замените на ваш пароль
     ports:
       - 5050:80
     networks:
