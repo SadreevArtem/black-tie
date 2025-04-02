@@ -17,7 +17,7 @@ const Masters = () => {
         className={`container mt-[105px] flex flex-col items-center ${montserrat.className}`}
       >
         <h1 className="text-[1px] opacity-5">
-          Мастера эротического массажа, массажистки, erotic massage, xxx{" "}
+          Мастера эротического массажа, массажистки, erotic massage, xxx
         </h1>
         <h2
           className={clsx(

@@ -17,10 +17,8 @@ export const AppHead: React.FC<React.PropsWithChildren<Props>> = ({
   keywords,
   showCanonical,
   canonicalPath,
-  children
+  children,
 }) => {
-
-
   return (
     <Head>
       <title>{title}</title>
@@ -32,7 +30,10 @@ export const AppHead: React.FC<React.PropsWithChildren<Props>> = ({
       <meta property="og:locale" content="ru_RU" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:site_name" content="Салон эротического массажа Тюмень spa-chocolate.ru" />
+      <meta
+        property="og:site_name"
+        content="Салон эротического массажа Тюмень blacktie72.ru"
+      />
       <link
         rel="apple-touch-icon"
         sizes="180x180"
@@ -58,9 +59,8 @@ export const AppHead: React.FC<React.PropsWithChildren<Props>> = ({
       ></link>
       <meta name="msapplication-TileColor" content="#da532c"></meta>
       <meta name="theme-color" content="#ffffff"></meta>
-      <meta property="og:url" content="https://spa-chocolate.ru" />
-      {showCanonical && <link rel='canonical' href={canonicalPath} />}
-      {/* <link rel="canonical" href="https://spa-chocolate.ru" /> */}
+      <meta property="og:url" content="https://blacktie72.ru" />
+      {showCanonical && <link rel="canonical" href={canonicalPath} />}
       {image && <meta property="og:image" content={image} />}
       {children}
     </Head>

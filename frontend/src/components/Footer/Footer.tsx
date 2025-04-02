@@ -55,13 +55,13 @@ export const Footer: React.FC = () => {
               платформы
             </h5>
             <Link
-              href={"https://t.me/Cchocolate_tmn"}
+              href={"https://t.me/Black_Tie72"}
               className="text-white w-fit hover:text-hover max-md:text-[15px]"
             >
               Telegramm
             </Link>
             <Link
-              href={"https://wa.me/79220058113"}
+              href={"https://wa.me/79220046935"}
               className="text-white w-fit hover:text-hover max-md:text-[15px]"
             >
               WhatsApp
@@ -72,7 +72,7 @@ export const Footer: React.FC = () => {
               связаться с нами:
             </h5>
             <Link
-              href={`tel:+79220058113`}
+              href={`tel:+79220046935`}
               className="text-white w-fit hover:text-hover"
             >
               +7 (922) 005-81-13
@@ -95,7 +95,7 @@ export const Footer: React.FC = () => {
           </button>
           <div className="flex gap-4 my-8">
             <Link
-              href={"https://t.me/Cchocolate_tmn"}
+              href={"https://t.me/Black_Tie72"}
               className="flex items-center gap-2"
             >
               <Image
@@ -108,7 +108,7 @@ export const Footer: React.FC = () => {
               <p className="text-white">В Telegramm</p>
             </Link>
             <Link
-              href={"https://wa.me/79220058113"}
+              href={"https://wa.me/79220046935"}
               className="flex items-center gap-2"
             >
               <Image
@@ -141,7 +141,7 @@ export const Footer: React.FC = () => {
                   Солнечный проезд 22
                 </p>
                 <Link
-                  href={`tel:+79220058113`}
+                  href={`tel:+79220046935`}
                   className="text-white hover:text-hover block text-center"
                 >
                   +7 (922) 005-76-17

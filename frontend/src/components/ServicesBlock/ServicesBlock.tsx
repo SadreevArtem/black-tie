@@ -27,7 +27,7 @@ export const ServicesBlock: React.FC<Props> = ({ title = "", className }) => {
       description: "10% скидка всем подписчикам <br/>Telegram канала",
       image: "/images/card2.png",
       mobImage: "/images/mob_card3.jpeg",
-      imagePosition: "left",
+      imagePosition: "right",
     },
     // {
     //   id: 3,

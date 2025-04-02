@@ -75,14 +75,14 @@ export const HamburgerMenu: React.FC<Props> = ({
         </button>
 
         <Link
-          href={"https://t.me/Cchocolate_tmn"}
+          href={"https://t.me/Black_Tie72"}
           className=" text-center shadow-button bg-black border border-white xl:p-6 p-4 xl:px-[100px]  max-md:text-[14px] rounded-[5px] transition w-full text-white"
           onClick={() => {}}
         >
           Telegram-канал для VIP гостей
         </Link>
         <Link
-          href={"https://wa.me/79220058113"}
+          href={"https://wa.me/79220046935"}
           className="text-center shadow-button bg-black border border-white xl:p-6 p-4 xl:px-[100px]  max-md:text-[14px] rounded-[5px] transition w-full text-white"
           onClick={() => {}}
         >
@@ -91,16 +91,16 @@ export const HamburgerMenu: React.FC<Props> = ({
 
         <div className="self-center mt-2 font-thin text-[22px] flex flex-col gap-4">
           <Link
-            href={`tel:+79220058113`}
+            href={`tel:+79220046935`}
             className="text-white hover:text-hover block text-center"
           >
-            +7 (922) 005-81-13
+            +7 (922) 004-86-18
           </Link>
           <ul className="flex self-center gap-4">
             <li className="">
               <Link
                 className="header-link relative "
-                href="https://t.me/chocolate_spa"
+                href="https://t.me/+79220046935"
               >
                 <Image
                   src={"/images/telegram.svg"}
@@ -114,7 +114,7 @@ export const HamburgerMenu: React.FC<Props> = ({
             <li className="">
               <Link
                 className="header-link relative"
-                href={"https://wa.me/79220058113"}
+                href={"https://wa.me/79220046935"}
               >
                 <Image
                   src={"/images/whatsapp.svg"}
@@ -126,7 +126,7 @@ export const HamburgerMenu: React.FC<Props> = ({
               </Link>
             </li>
             <li className="">
-              <Link className="header-link relative" href={`tel:+79220058113`}>
+              <Link className="header-link relative" href={`tel:+79220046935`}>
                 <Image
                   src={"/images/call.svg"}
                   alt=""

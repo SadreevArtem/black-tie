@@ -12,7 +12,7 @@ const Programs = () => {
   return (
     <>
       <AppHead
-        title="Программы эромассажа sexy massage Тюмень spa-chocolate.ru"
+        title="Программы эромассажа sexy massage Тюмень blacktie72.ru"
         description="спа-салон релакс массажа в Тюмени, цены на массаж"
       />
       <Header />

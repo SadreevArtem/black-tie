@@ -58,7 +58,7 @@ export const ProgramsDetailClient: FC<Props> = ({ id }) => {
                 className="bg-white w-full !m-0  font-normal"
                 title="Записаться онлайн"
               ></Button>
-              <Link href={`tel:+79220058113`}>
+              <Link href={`tel:+79220046935`}>
                 <Button
                   title="Позвонить"
                   className="w-full !bg-black border border-white hover:!bg-white/20 font-normal !m-0"

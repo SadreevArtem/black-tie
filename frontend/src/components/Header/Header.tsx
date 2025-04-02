@@ -51,7 +51,7 @@ export const Header: React.FC = () => {
           </div>
           <div className="xl:text-[20px] text-[15px]">
             <p className="text-white">г. Тюмень</p>
-            <p className="text-white">ул. Гнаровской, д.6</p>
+            <p className="text-white">ул. Гнаровской, д. 6</p>
           </div>
         </div>
 
@@ -95,7 +95,7 @@ export const Header: React.FC = () => {
             <li className="max-md:hidden">
               <Link
                 className="header-link relative "
-                href="https://t.me/chocolate_spa"
+                href="https://t.me/+79220046935"
               >
                 <Image
                   src={"/images/telegram.svg"}
@@ -109,7 +109,7 @@ export const Header: React.FC = () => {
             <li className="max-md:hidden">
               <Link
                 className="header-link relative"
-                href={"https://wa.me/79220058113"}
+                href={"https://wa.me/79220046935"}
               >
                 <Image
                   src={"/images/whatsapp.svg"}
@@ -121,7 +121,7 @@ export const Header: React.FC = () => {
               </Link>
             </li>
             <li className="max-md:hidden">
-              <Link className="header-link relative" href={`tel:+79220058113`}>
+              <Link className="header-link relative" href={`tel:+79220046935`}>
                 <Image
                   src={"/images/call.svg"}
                   alt=""
@@ -156,7 +156,7 @@ export const Header: React.FC = () => {
                   </div>
                   <div className="xl:text-[20px] text-[16px]">
                     <p className="text-white">г. Тюмень</p>
-                    <p className="text-white">ул. Гнаровской, д.6</p>
+                    <p className="text-white">ул. Гнаровской, д. 6</p>
                   </div>
                 </div>
               </li>
