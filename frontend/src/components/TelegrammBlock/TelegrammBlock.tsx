@@ -40,7 +40,7 @@ export const TelegrammBlock = () => {
                 КУПОН НА 10%
               </p>
               <Link
-                href={"/"}
+                href={"https://t.me/Black_Tie72"}
                 className="flex gap-3 md:px-6 md:py-2 py-1 px-3 bg-transparent text-black border border-black rounded-[5px] transition"
               >
                 <Image
