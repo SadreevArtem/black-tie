@@ -94,7 +94,7 @@ export const HamburgerMenu: React.FC<Props> = ({
             href={`tel:+79220046935`}
             className="text-white hover:text-hover block text-center"
           >
-            +7 (922) 004-86-18
+            +7 (922) 004-69-35
           </Link>
           <ul className="flex self-center gap-4">
             <li className="">

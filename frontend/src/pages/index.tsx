@@ -12,6 +12,7 @@ import { TelegrammBlock } from "@/components/TelegrammBlock/TelegrammBlock";
 import { Footer } from "@/components/Footer/Footer";
 import { ServicesBlock } from "@/components/ServicesBlock/ServicesBlock";
 import { Call } from "@/components/Call/Call";
+import { GalleryBlock } from "@/components/GalleryBlock/GalleryBlock";
 
 export const montserrat = Montserrat({
   subsets: ["latin"],
@@ -65,6 +66,9 @@ const Home = () => {
         {/* <div className="md:mt-[60px] mt-4">
           <Selections title="Вам точно понравится"/>
         </div> */}
+        <div className="md:mt-[60px] mt-4">
+          <GalleryBlock />
+        </div>
         <div className="md:mt-[60px] mt-4">
           <Footer />
         </div>
