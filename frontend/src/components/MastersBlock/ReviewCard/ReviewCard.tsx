@@ -23,7 +23,7 @@ export const ReviewCard: React.FC<Props> = ({ item, className }) => {
         aria-hidden
       >
         <div className="flex flex-col  items-center gap-3 md:mb-6">
-          <div className="relative grayscale hover:grayscale-0 w-[180px] h-[270px]  md:w-[300px] md:h-[420px] shrink-0 rounded-md">
+          <div className="relative md:grayscale md:hover:grayscale-0 w-[180px] h-[270px]  md:w-[300px] md:h-[420px] shrink-0 rounded-md">
             <Image
               src={item.avatar || "/images/empty.png"}
               alt={item.name || "Аватар"}
