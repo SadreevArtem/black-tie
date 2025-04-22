@@ -28,7 +28,7 @@ export default function App({ Component, pageProps }: AppProps) {
   );
   return getLayout(
     <>
-      {/* <script
+      <script
         dangerouslySetInnerHTML={{
           __html: `
           (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -37,7 +37,7 @@ export default function App({ Component, pageProps }: AppProps) {
           k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
           (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
        
-          ym(98705568, "init", {
+          ym(101276661, "init", {
                clickmap:true,
                trackLinks:true,
                accurateTrackBounce:true,
@@ -49,12 +49,12 @@ export default function App({ Component, pageProps }: AppProps) {
       <noscript>
         <div>
           <img
-            src="https://mc.yandex.ru/watch/98705568"
+            src="https://mc.yandex.ru/watch/101276661"
             style={{ position: "absolute", left: "-9999px" }}
             alt=""
           />
         </div>
-      </noscript> */}
+      </noscript>
       <QueryClientProvider client={queryClient}>
         <HydrationBoundary state={pageProps.dehydratedState}>
           <Component {...pageProps} />
